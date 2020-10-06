@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    tools:context=".DashboardActivity">
+
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="250dp"
+        android:layout_height="271dp"
+        android:layout_centerHorizontal="true"
+        app:srcCompat="@drawable/bgpic" />
+
+    <ImageView
+        android:layout_gravity="bottom"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        android:background="@drawable/bg_field" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="HALO SOFWAN HADI"
+            android:textSize="20sp">
+        </TextView>
+        <ImageView
+            android:id="@+id/im_foto"
+            android:layout_width="134dp"
+            android:layout_height="115dp"
+            android:layout_marginTop="220dp"
+            app:srcCompat="@drawable/foto" />
+
+        <ImageView
+            android:id="@+id/im_kk"
+            android:layout_width="251dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="20dp"
+            app:srcCompat="@drawable/kk" />
+
+        <ImageView
+            android:id="@+id/im_ktp"
+            android:layout_width="251dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="15dp"
+            app:srcCompat="@drawable/ktp" />
+
+        <ImageView
+            android:id="@+id/im_akta"
+            android:layout_width="251dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="15dp"
+            app:srcCompat="@drawable/akta" />
+    </LinearLayout>
+</RelativeLayout>
