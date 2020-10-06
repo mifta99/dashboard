@@ -8,4 +8,11 @@ public class koneksi {
     public static final String key_username="username";
     public static final String key_password="password";
     public static final String key_idUser="id_user";
+    public static final String key_status="status";
+    public static final String key_nama="nama";
+    public static final String key_nip="nip";
+    public static final String key_foto="foto";
+
+
+
 }

@@ -12,6 +12,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
 public class DashboardActivity extends AppCompatActivity implements View.OnClickListener {
     TextView txtUser;
     ImageView foto, kk, ktp, akta;
@@ -22,12 +24,20 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
-        kk = (ImageView) findViewById(R.id.im_kk);
-        akta = (ImageView) findViewById(R.id.im_akta);
-        ktp = (ImageView) findViewById(R.id.im_ktp);
-        foto = (ImageView) findViewById(R.id.im_foto);
-        txtUser = (TextView) findViewById(R.id.tv_user);
+        final SharedPreferences sharedPreferences = getSharedPreferences("myproject", Context.MODE_PRIVATE);
+        final String nama_ = sharedPreferences.getString("nama", "0");
+        final String foto_ = sharedPreferences.getString("foto", "0");
 
+        kk = findViewById(R.id.im_kk);
+        akta = findViewById(R.id.im_akta);
+        ktp = findViewById(R.id.im_ktp);
+        foto = findViewById(R.id.im_foto);
+        txtUser = findViewById(R.id.tv_user);
+
+        txtUser.setText("HALO " + nama_);
+        Glide.with(DashboardActivity.this)
+                .load(foto_)
+                .into(foto);
         kk.setOnClickListener(this);
         akta.setOnClickListener(this);
         ktp.setOnClickListener(this);

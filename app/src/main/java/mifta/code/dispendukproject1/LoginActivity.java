@@ -36,9 +36,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        username = (EditText)findViewById(R.id.et_username);
-        password = (EditText)findViewById(R.id.et_password);
-        login = (Button) findViewById(R.id.bt_login);
+        username = findViewById(R.id.et_username);
+        password = findViewById(R.id.et_password);
+        login = findViewById(R.id.bt_login);
 
         login.setOnClickListener(this);
     }
@@ -84,6 +84,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                     SharedPreferences.Editor editor = sharedPreferences.edit();
                                     editor.putBoolean("login2", true);
                                     editor.putString("id_user", c.getString(koneksi.key_idUser));
+                                    editor.putString("nama", c.getString(koneksi.key_nama));
+                                    editor.putString("status", c.getString(koneksi.key_status));
+                                    editor.putString("nip", c.getString(koneksi.key_nip));
+                                    editor.putString("foto", c.getString(koneksi.key_foto));
                                     editor.commit();
                                     startActivity(new Intent(LoginActivity.this, DashboardActivity.class));
                                     finish();
