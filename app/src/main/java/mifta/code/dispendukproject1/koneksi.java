@@ -12,7 +12,5 @@ public class koneksi {
     public static final String key_nama="nama";
     public static final String key_nip="nip";
     public static final String key_foto="foto";
-
-
-
+    public static final String key_jabatan="jabatan";
 }

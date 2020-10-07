@@ -88,6 +88,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                     editor.putString("status", c.getString(koneksi.key_status));
                                     editor.putString("nip", c.getString(koneksi.key_nip));
                                     editor.putString("foto", c.getString(koneksi.key_foto));
+                                    editor.putString("jabatan", c.getString(koneksi.key_jabatan));
                                     editor.commit();
                                     startActivity(new Intent(LoginActivity.this, DashboardActivity.class));
                                     finish();

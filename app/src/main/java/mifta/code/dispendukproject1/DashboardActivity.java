@@ -72,7 +72,7 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.menu_profil) {
-            Intent d = new Intent(DashboardActivity.this, AkteActivity.class);
+            Intent d = new Intent(DashboardActivity.this, ProfilActivity.class);
             startActivity(d);
         }
         if (id == R.id.menu_logout) {
