@@ -63,20 +63,20 @@
                 <TableRow>
                     <ImageView
                         android:id="@+id/im_ktp"
-                        android:layout_width="155dp"
-                        android:layout_height="107dp"
+                        android:layout_width="115dp"
+                        android:layout_height="86dp"
                         android:layout_weight="1"
-                        app:srcCompat="@drawable/ic_ktp"/>
+                        app:srcCompat="@drawable/ic_ktp" />
                     <ImageView
                         android:id="@+id/im_kk"
-                        android:layout_width="155dp"
-                        android:layout_height="107dp"
+                        android:layout_width="115dp"
+                        android:layout_height="86dp"
                         android:layout_weight="1"
                         app:srcCompat="@drawable/ic_kk"/>
                     <ImageView
                         android:id="@+id/im_akta"
-                        android:layout_width="155dp"
-                        android:layout_height="107dp"
+                        android:layout_width="115dp"
+                        android:layout_height="86dp"
                         android:layout_weight="1"
                         app:srcCompat="@drawable/ic_akta"/>
                 </TableRow>
@@ -85,17 +85,17 @@
                     >
                     <TextView
                         android:text="KTP-Elektronik"
-                        android:fontFamily="@font/montserratbold"
+                        android:fontFamily="@font/nexabold"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"/>
                     <TextView
                         android:text="Kartu Keluarga"
-                        android:fontFamily="@font/montserratbold"
+                        android:fontFamily="@font/nexabold"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"/>
                     <TextView
                         android:text="Akta"
-                        android:fontFamily="@font/montserratbold"
+                        android:fontFamily="@font/nexabold"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"/>
                 </TableRow>
@@ -104,20 +104,20 @@
                     android:layout_marginTop="10dp">
                     <ImageView
                         android:id="@+id/im_datang"
-                        android:layout_width="155dp"
-                        android:layout_height="107dp"
+                        android:layout_width="115dp"
+                        android:layout_height="86dp"
                         android:layout_weight="1"
                         app:srcCompat="@drawable/ic_kedatangan"/>
                     <ImageView
                         android:id="@+id/im_pindah"
-                        android:layout_width="155dp"
-                        android:layout_height="107dp"
+                        android:layout_width="115dp"
+                        android:layout_height="86dp"
                         android:layout_weight="1"
                         app:srcCompat="@drawable/ic_pindah"/>
                     <ImageView
                         android:id="@+id/im_biodata"
-                        android:layout_width="155dp"
-                        android:layout_height="107dp"
+                        android:layout_width="115dp"
+                        android:layout_height="86dp"
                         android:layout_weight="1"
                         app:srcCompat="@drawable/ic_biodata"/>
                 </TableRow>
@@ -126,17 +126,17 @@
                     >
                     <TextView
                         android:text="Surat Datang"
-                        android:fontFamily="@font/montserratbold"
+                        android:fontFamily="@font/nexabold"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"/>
                     <TextView
                         android:text="Surat Pindah"
-                        android:fontFamily="@font/montserratbold"
+                        android:fontFamily="@font/nexabold"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"/>
                     <TextView
                         android:text="Biodata"
-                        android:fontFamily="@font/montserratbold"
+                        android:fontFamily="@font/nexabold"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"/>
                 </TableRow>

@@ -12,7 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ProfilActivity"></activity>
+        <activity android:name=".BiodataActivity"></activity>
+        <activity android:name=".SuratPindahActivity" />
+        <activity android:name=".SuratDatangActivity" />
+        <activity
+            android:name=".ProfilActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".SplashActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
@@ -25,9 +30,10 @@
         <activity android:name=".AkteActivity" />
         <activity android:name=".KtpActivity" />
         <activity android:name=".KkActivity" />
-        <activity android:name=".DashboardActivity"></activity>
-        <activity android:name=".LoginActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".DashboardActivity" />
+        <activity
+            android:name=".LoginActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
     </application>
 
 </manifest>

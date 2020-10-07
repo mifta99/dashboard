@@ -16,7 +16,7 @@ import com.bumptech.glide.Glide;
 
 public class DashboardActivity extends AppCompatActivity implements View.OnClickListener {
     TextView txtUser;
-    ImageView foto, kk, ktp, akta;
+    ImageView foto, kk, ktp, akta, datang, pindah, biodata;
     private Menu action;
 
     @Override
@@ -32,6 +32,9 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
         akta = findViewById(R.id.im_akta);
         ktp = findViewById(R.id.im_ktp);
         foto = findViewById(R.id.im_foto);
+        datang = findViewById(R.id.im_datang);
+        pindah = findViewById(R.id.im_pindah);
+        biodata = findViewById(R.id.im_biodata);
         txtUser = findViewById(R.id.tv_user);
 
         txtUser.setText("HALO " + nama_);
@@ -41,6 +44,9 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
         kk.setOnClickListener(this);
         akta.setOnClickListener(this);
         ktp.setOnClickListener(this);
+        datang.setOnClickListener(this);
+        pindah.setOnClickListener(this);
+        biodata.setOnClickListener(this);
     }
 
     @Override
@@ -57,6 +63,18 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
             case R.id.im_akta:
                 Intent c = new Intent(DashboardActivity.this, AkteActivity.class);
                 startActivity(c);
+                break;
+            case R.id.im_datang:
+                Intent e = new Intent(DashboardActivity.this, SuratDatangActivity.class);
+                startActivity(e);
+                break;
+            case R.id.im_pindah:
+                Intent f = new Intent(DashboardActivity.this, SuratPindahActivity.class);
+                startActivity(f);
+                break;
+            case R.id.im_biodata:
+                Intent g = new Intent(DashboardActivity.this, BiodataActivity.class);
+                startActivity(g);
                 break;
         }
     }
