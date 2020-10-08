@@ -1,7 +1,5 @@
 package mifta.code.dispendukproject1;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -11,25 +9,19 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.android.volley.AuthFailureError;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
+import androidx.appcompat.app.AppCompatActivity;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+import java.util.ArrayList;
+import java.util.List;
 
-import java.util.HashMap;
-import java.util.Map;
+import retrofit2.Call;
+import retrofit2.Callback;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     EditText username, password;
     Button login;
     private boolean login1 = false;
+    private List<tampil> results = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,57 +57,43 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }
     }
 
-    private void login(){
-        final String username_ = username.getText().toString();
-        final String password_ = password.getText().toString();
+    private void login() {
+        String usename_ = username.getText().toString();
+        String password_ = password.getText().toString();
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, koneksi.login,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        if (response.contains("1")){
-                            try {
-                                JSONObject jsonObject;
-                                jsonObject = new JSONObject(response);
-                                JSONArray result = jsonObject.getJSONArray("result");
-                                for (int i=0; i<result.length(); i++){
-                                    JSONObject c = result.getJSONObject(i);
-                                    SharedPreferences sharedPreferences = getSharedPreferences("myproject", Context.MODE_PRIVATE);
-                                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                                    editor.putBoolean("login2", true);
-                                    editor.putString("id_user", c.getString(koneksi.key_idUser));
-                                    editor.putString("nama", c.getString(koneksi.key_nama));
-                                    editor.putString("status", c.getString(koneksi.key_status));
-                                    editor.putString("nip", c.getString(koneksi.key_nip));
-                                    editor.putString("foto", c.getString(koneksi.key_foto));
-                                    editor.putString("jabatan", c.getString(koneksi.key_jabatan));
-                                    editor.commit();
-                                    startActivity(new Intent(LoginActivity.this, DashboardActivity.class));
-                                    finish();
-                                }
-                            }catch (JSONException e){
-                                e.printStackTrace();
-                            }
-                        }else {
-                            Toast.makeText(getApplicationContext(), "Email atau Password anda Salah", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(LoginActivity.this, String.valueOf(error), Toast.LENGTH_SHORT).show();
-                    }
-                }) {
+        API api = koneksi.getClient().create(API.class);
+
+        Call<respon> aksi = api.login(usename_, password_);
+        aksi.enqueue(new Callback<respon>() {
             @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String, String> params = new HashMap<>();
-                params.put(koneksi.key_username, username_);
-                params.put(koneksi.key_password, password_);
-                return params;
+            public void onResponse(Call<respon> call, retrofit2.Response<respon> response) {
+                String kode = response.body().getValue();
+                results.clear();
+                if (kode.equals("1")) {
+                    results = response.body().getResult();
+                    for (int i = 0; i < results.size(); i++) {
+                        SharedPreferences sharedPreferences = getSharedPreferences("myproject", Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putBoolean("login2", true);
+                        editor.putString("id_user", results.get(i).id_user);
+                        editor.putString("nama", results.get(i).nama);
+                        editor.putString("status", results.get(i).status);
+                        editor.putString("nip", results.get(i).nip);
+                        editor.putString("foto", results.get(i).foto);
+                        editor.putString("jabatan", results.get(i).jabatan);
+                        editor.commit();
+                        startActivity(new Intent(LoginActivity.this, DashboardActivity.class));
+                        finish();
+                    }
+                } else {
+                    Toast.makeText(LoginActivity.this, "Email atau Password anda salah", Toast.LENGTH_SHORT).show();
+                }
             }
-        };
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
-        requestQueue.add(stringRequest);
+
+            @Override
+            public void onFailure(Call<respon> call, Throwable t) {
+                Toast.makeText(LoginActivity.this, "Tidak ada koneksi", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
