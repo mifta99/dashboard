@@ -4,6 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:padding="25dp"
     tools:context=".KkActivity">
+
+    <TableLayout
+        android:id="@+id/table"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/rv_kk">
+
+        <TableRow>
+            <ImageView
+                android:id="@+id/im_ktp"
+                android:layout_width="115dp"
+                android:layout_height="86dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/ic_ktp" />
+        </TableRow>
+    </TableLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_kk"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/table"
+        tools:listitem="@layout/custom_kk">
+    </androidx.recyclerview.widget.RecyclerView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
