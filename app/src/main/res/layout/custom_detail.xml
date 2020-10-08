@@ -6,6 +6,7 @@
     xmlns:card_view="http://schemas.android.com/tools">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/crd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="20dp"
@@ -27,7 +28,7 @@
             <TableRow>
 
                 <ImageView
-                    android:id="@+id/im_ktp"
+                    android:id="@+id/imx_icpict"
                     android:layout_width="50dp"
                     android:layout_height="86dp"
                     android:layout_weight="1"
@@ -41,7 +42,7 @@
                     android:orientation="vertical"
                     android:layout_weight="1">
                     <TextView
-                        android:id="@+id/tv_kec"
+                        android:id="@+id/tvx_kec"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/nexabold"
@@ -55,6 +56,7 @@
                         android:fontFamily="@font/nexalight"
                         android:textColor="@color/black"/>
                     <TextView
+                        android:id="@+id/tvx_jenis"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Kartu Keluarga"
@@ -62,7 +64,7 @@
                         android:textColor="@color/black"/>
                 </LinearLayout>
                 <TextView
-                    android:id="@+id/tv_jml"
+                    android:id="@+id/tv_totalKec"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
