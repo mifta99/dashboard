@@ -111,7 +111,7 @@
         android:padding="16dp"
         android:background="@drawable/bg_field"
         app:layout_constraintTop_toBottomOf="@id/table"
-        tools:listitem="@layout/custom_detail">
+        tools:listitem="@layout/custom_Kk">
     </androidx.recyclerview.widget.RecyclerView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

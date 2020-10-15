@@ -11,9 +11,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 
@@ -21,7 +18,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     EditText username, password;
     Button login;
     private boolean login1 = false;
-    private List<tampil> results = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,24 +63,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         aksi.enqueue(new Callback<respon>() {
             @Override
             public void onResponse(Call<respon> call, retrofit2.Response<respon> response) {
-                String kode = response.body().getValue();
-                results.clear();
-                if (kode.equals("1")) {
-                    results = response.body().getResult();
-                    for (int i = 0; i < results.size(); i++) {
-                        SharedPreferences sharedPreferences = getSharedPreferences("myproject", Context.MODE_PRIVATE);
-                        SharedPreferences.Editor editor = sharedPreferences.edit();
-                        editor.putBoolean("login2", true);
-                        editor.putString("id_user", results.get(i).id_user);
-                        editor.putString("nama", results.get(i).nama);
-                        editor.putString("status", results.get(i).status);
-                        editor.putString("nip", results.get(i).nip);
-                        editor.putString("foto", results.get(i).foto);
-                        editor.putString("jabatan", results.get(i).jabatan);
-                        editor.commit();
-                        startActivity(new Intent(LoginActivity.this, DashboardActivity.class));
-                        finish();
-                    }
+                if (response.code()==200) {
+                    SharedPreferences sharedPreferences = getSharedPreferences("myproject", Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putBoolean("login2", true);
+                    editor.putString("jwt", response.body().getJwt());
+                    editor.commit();
+                    startActivity(new Intent(LoginActivity.this, DashboardActivity.class));
+                    finish();
                 } else {
                     Toast.makeText(LoginActivity.this, "Email atau Password anda salah", Toast.LENGTH_SHORT).show();
                 }

@@ -1,7 +1,5 @@
 package mifta.code.dispendukproject1;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -12,7 +10,12 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.auth0.android.jwt.JWT;
 import com.bumptech.glide.Glide;
+
+import java.util.List;
 
 public class DashboardActivity extends AppCompatActivity implements View.OnClickListener {
     TextView txtUser;
@@ -23,10 +26,12 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
+        getSupportActionBar().setTitle(" ");
 
         final SharedPreferences sharedPreferences = getSharedPreferences("myproject", Context.MODE_PRIVATE);
-        final String nama_ = sharedPreferences.getString("nama", "0");
-        final String foto_ = sharedPreferences.getString("foto", "0");
+        final String jwt_ = sharedPreferences.getString("jwt", "0");
+        JWT jwt = new JWT(jwt_);
+        List<String> aud = jwt.getAudience();
 
         kk = findViewById(R.id.im_kk);
         akta = findViewById(R.id.im_akta);
@@ -37,9 +42,13 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
         biodata = findViewById(R.id.im_biodata);
         txtUser = findViewById(R.id.tv_user);
 
+        final String nama_ = aud.get(2);
+        final String foto_ = aud.get(4);
+
         txtUser.setText("HALO " + nama_);
         Glide.with(DashboardActivity.this)
                 .load(foto_)
+                .placeholder(R.drawable.ic_loading)
                 .into(foto);
         kk.setOnClickListener(this);
         akta.setOnClickListener(this);
@@ -53,6 +62,8 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.im_kk:
+                SharedPreferences sharedPreferences = getSharedPreferences("myproject", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
                 Intent a = new Intent(DashboardActivity.this, KkActivity.class);
                 startActivity(a);
                 break;
@@ -92,6 +103,7 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
         if (id == R.id.menu_profil) {
             Intent d = new Intent(DashboardActivity.this, ProfilActivity.class);
             startActivity(d);
+            finish();
         }
         if (id == R.id.menu_logout) {
             logout();

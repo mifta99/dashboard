@@ -4,7 +4,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class koneksi {
-    public static final String Link = "http://192.168.43.241/dbdashboard/";
+    public static final String Link = "http://ws.dispendukcapil.situbondokab.go.id/";
     public static Retrofit retrofit;
 
     public static Retrofit getClient() {

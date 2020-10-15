@@ -36,7 +36,7 @@
                     android:layout_marginRight="10dp"
                     app:srcCompat="@drawable/ic_kk" />
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:orientation="vertical"
@@ -44,13 +44,13 @@
                     <TextView
                         android:id="@+id/tvx_kec"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:fontFamily="@font/nexabold"
                         android:textColor="@color/black"
                         android:text="KECAMATAN SITUBONDO"/>
                     <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_marginTop="8dp"
                         android:text="Jumlah Permohonan"
                         android:fontFamily="@font/nexalight"
@@ -58,14 +58,14 @@
                     <TextView
                         android:id="@+id/tvx_jenis"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:text="Kartu Keluarga"
                         android:fontFamily="@font/nexalight"
                         android:textColor="@color/black"/>
                 </LinearLayout>
                 <TextView
-                    android:id="@+id/tv_totalKec"
-                    android:layout_width="match_parent"
+                    android:id="@+id/tvx_totalKec"
+                    android:layout_width="50dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:background="#F55858"
