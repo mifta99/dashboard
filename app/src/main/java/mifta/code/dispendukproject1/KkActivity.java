@@ -1,6 +1,7 @@
 package mifta.code.dispendukproject1;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -83,7 +84,9 @@ public class KkActivity extends AppCompatActivity {
 
                 Log.d("coderespon", String.valueOf(response.code()));
                 if (response.code() != 200){
-                   // Log.d("errorrrr", String.valueOf(response.body().getMessage()));
+                   Toast.makeText(KkActivity.this, "Token tidak valid atau Token expired", Toast.LENGTH_SHORT).show();
+                    Intent a = new Intent(KkActivity.this, LoginActivity.class);
+                    startActivity(a);
                 }else {
                     String kode = response.body().getValue();
                     results.clear();
