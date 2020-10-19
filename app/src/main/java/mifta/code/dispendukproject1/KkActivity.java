@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,6 +27,7 @@ public class KkActivity extends AppCompatActivity {
     private List<tampil> results = new ArrayList<>();
     private KkAdapter kkAdapter;
     RecyclerView tampilKk;
+    ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +38,7 @@ public class KkActivity extends AppCompatActivity {
         bulan = findViewById(R.id.tv_month);
         tahun = findViewById(R.id.tv_year);
         hari = findViewById(R.id.tv_day);
+        progressBar = findViewById(R.id.progressBar);
 
         Calendar calendar = Calendar.getInstance();
         int year = calendar.get(Calendar.YEAR);
@@ -44,7 +48,7 @@ public class KkActivity extends AppCompatActivity {
         tanggal.setText(String.valueOf(date));
         int month = calendar.get(Calendar.MONTH);
         bulan.setText(String.valueOf(month + 1));
-        int day = calendar.get(Calendar.DAY_OF_WEEK_IN_MONTH) + 1;
+        int day = calendar.get(Calendar.DAY_OF_WEEK);
         if (day == 1) {
             hari.setText("Senin");
         } else if (day == 2) {
@@ -71,6 +75,15 @@ public class KkActivity extends AppCompatActivity {
         tampil();
     }
 
+    private void showLoading(Boolean state) {
+        if (state) {
+            progressBar.setVisibility(View.VISIBLE);
+        } else {
+            progressBar.setVisibility(View.GONE);
+        }
+    }
+
+
     private void tampil() {
         final SharedPreferences sharedPreferences = getSharedPreferences("myproject", Context.MODE_PRIVATE);
         final String jwt_ = sharedPreferences.getString("jwt", "0");
@@ -81,20 +94,21 @@ public class KkActivity extends AppCompatActivity {
         aksi.enqueue(new Callback<respon>() {
             @Override
             public void onResponse(Call<respon> call, Response<respon> response) {
-
-                Log.d("coderespon", String.valueOf(response.code()));
-                if (response.code() != 200){
-                   Toast.makeText(KkActivity.this, "Token tidak valid atau Token expired", Toast.LENGTH_SHORT).show();
-                    Intent a = new Intent(KkActivity.this, LoginActivity.class);
-                    startActivity(a);
-                }else {
-                    String kode = response.body().getValue();
-                    results.clear();
-                    if (kode.equals("1")) {
-                        results = response.body().getResult();
-                        kkAdapter = new KkAdapter(KkActivity.this, results);
-                        tampilKk.setAdapter(kkAdapter);
-                    }
+                String kode = response.body().getValue();
+                results.clear();
+                if (kode.equals("1")) {
+                    showLoading(false);
+                    results = response.body().getResult();
+                    kkAdapter = new KkAdapter(KkActivity.this, results);
+                    tampilKk.setAdapter(kkAdapter);
+                showLoading(true);
+//                Log.d("coderespon", String.valueOf(response.code()));
+//                if (response.code() != 200){
+//                   Toast.makeText(KkActivity.this, "Token tidak valid atau Token expired", Toast.LENGTH_SHORT).show();
+//                    logout();
+//                }else {
+//
+//                    }
                 }
 
             }
@@ -104,5 +118,14 @@ public class KkActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    private void logout() {
+        final SharedPreferences sharedPreferences = getSharedPreferences("myproject", Context.MODE_PRIVATE);
+        SharedPreferences.Editor akses = sharedPreferences.edit();
+        akses.clear();
+        akses.commit();
+        startActivity(new Intent(KkActivity.this, LoginActivity.class));
+        finish();
     }
 }

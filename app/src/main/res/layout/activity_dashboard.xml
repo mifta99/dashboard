@@ -66,19 +66,25 @@
                         android:layout_width="115dp"
                         android:layout_height="86dp"
                         android:layout_weight="1"
-                        app:srcCompat="@drawable/ic_ktp" />
+                        app:srcCompat="@drawable/ic_ktp"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground"/>
                     <ImageView
                         android:id="@+id/im_kk"
                         android:layout_width="115dp"
                         android:layout_height="86dp"
                         android:layout_weight="1"
-                        app:srcCompat="@drawable/ic_kk"/>
+                        app:srcCompat="@drawable/ic_kk"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground"/>
                     <ImageView
                         android:id="@+id/im_akta"
                         android:layout_width="115dp"
                         android:layout_height="86dp"
                         android:layout_weight="1"
-                        app:srcCompat="@drawable/ic_akta"/>
+                        app:srcCompat="@drawable/ic_akta"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground"/>
                 </TableRow>
                 <TableRow
                     android:layout_gravity="center_horizontal"
@@ -87,17 +93,23 @@
                         android:text="KTP-Elektronik"
                         android:fontFamily="@font/nexabold"
                         android:layout_weight="1"
-                        android:gravity="center_horizontal"/>
+                        android:gravity="center_horizontal"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground"/>
                     <TextView
                         android:text="Kartu Keluarga"
                         android:fontFamily="@font/nexabold"
                         android:layout_weight="1"
-                        android:gravity="center_horizontal"/>
+                        android:gravity="center_horizontal"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground"/>
                     <TextView
                         android:text="Akta"
                         android:fontFamily="@font/nexabold"
                         android:layout_weight="1"
-                        android:gravity="center_horizontal"/>
+                        android:gravity="center_horizontal"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground"/>
                 </TableRow>
 
                 <TableRow
@@ -107,19 +119,25 @@
                         android:layout_width="115dp"
                         android:layout_height="86dp"
                         android:layout_weight="1"
-                        app:srcCompat="@drawable/ic_kedatangan"/>
+                        app:srcCompat="@drawable/ic_kedatangan"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground"/>
                     <ImageView
                         android:id="@+id/im_pindah"
                         android:layout_width="115dp"
                         android:layout_height="86dp"
                         android:layout_weight="1"
-                        app:srcCompat="@drawable/ic_pindah"/>
+                        app:srcCompat="@drawable/ic_pindah"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground"/>
                     <ImageView
                         android:id="@+id/im_biodata"
                         android:layout_width="115dp"
                         android:layout_height="86dp"
                         android:layout_weight="1"
-                        app:srcCompat="@drawable/ic_biodata"/>
+                        app:srcCompat="@drawable/ic_biodata"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground"/>
                 </TableRow>
                 <TableRow
                     android:layout_gravity="center_horizontal"
