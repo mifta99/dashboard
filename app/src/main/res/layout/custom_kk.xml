@@ -61,13 +61,13 @@
                         android:fontFamily="@font/nexalight"
                         android:textColor="@color/black"/>
                 </LinearLayout>
-                <TextView
+                <Button
                     android:id="@+id/tvx_totalKec"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
                     android:background="#F55858"
                     android:text="50"
+                    android:padding="@dimen/margin_standart"
                     android:textColor="@color/white"
                     android:gravity="center"
                     android:textSize="40sp"
