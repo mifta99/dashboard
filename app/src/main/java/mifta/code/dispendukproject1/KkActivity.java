@@ -94,6 +94,7 @@ public class KkActivity extends AppCompatActivity {
         aksi.enqueue(new Callback<respon>() {
             @Override
             public void onResponse(Call<respon> call, Response<respon> response) {
+                showLoading(true);
                 String kode = response.body().getValue();
                 results.clear();
                 if (kode.equals("1")) {
@@ -101,7 +102,6 @@ public class KkActivity extends AppCompatActivity {
                     results = response.body().getResult();
                     kkAdapter = new KkAdapter(KkActivity.this, results);
                     tampilKk.setAdapter(kkAdapter);
-                showLoading(true);
 //                Log.d("coderespon", String.valueOf(response.code()));
 //                if (response.code() != 200){
 //                   Toast.makeText(KkActivity.this, "Token tidak valid atau Token expired", Toast.LENGTH_SHORT).show();
