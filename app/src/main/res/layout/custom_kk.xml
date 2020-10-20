@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:layout_marginRight="10dp"
     android:layout_marginLeft="10dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -12,14 +12,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="20dp"
-        android:layout_margin="10dp"
+        android:layout_margin="@dimen/margin_standart"
+        app:cardCornerRadius="@dimen/margin_medium"
         android:clickable="true"
         android:foreground="?android:attr/selectableItemBackground"
+<<<<<<< HEAD
         card_view:cardCornerRadius="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
+=======
+>>>>>>> 1477f0a1bb49c434a260234fb7046b713d257bc3
         app:cardBackgroundColor="#F4F4F4"
         >
 
@@ -65,13 +69,13 @@
                         android:fontFamily="@font/nexalight"
                         android:textColor="@color/black"/>
                 </LinearLayout>
-                <TextView
+                <Button
                     android:id="@+id/tvx_totalKec"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
                     android:background="#F55858"
                     android:text="50"
+                    android:padding="@dimen/margin_standart"
                     android:textColor="@color/white"
                     android:gravity="center"
                     android:textSize="40sp"
@@ -81,4 +85,5 @@
         </TableLayout>
     </androidx.cardview.widget.CardView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>
