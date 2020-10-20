@@ -4,6 +4,7 @@
     android:layout_height="wrap_content"
     android:layout_marginRight="10dp"
     android:layout_marginLeft="10dp"
+    android:layout_marginBottom="10dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/tools">
 
@@ -16,14 +17,11 @@
         app:cardCornerRadius="@dimen/margin_medium"
         android:clickable="true"
         android:foreground="?android:attr/selectableItemBackground"
-<<<<<<< HEAD
         card_view:cardCornerRadius="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-=======
->>>>>>> 1477f0a1bb49c434a260234fb7046b713d257bc3
         app:cardBackgroundColor="#F4F4F4"
         >
 
