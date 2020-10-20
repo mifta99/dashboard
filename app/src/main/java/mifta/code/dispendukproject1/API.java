@@ -14,8 +14,8 @@ public interface API {
                        @Field("password") String password);
 
     @GET("count_kk_kab.php")
-    Call<respon> count_kk_kab(@Header("Authorization") String Authorization);
-
+    Call<respon> count_kk_kab();
+    //@Header("Authorization") String Authorization
     @GET("count_kk_kec.php")
     Call<respon> count_kk_kec();
 }

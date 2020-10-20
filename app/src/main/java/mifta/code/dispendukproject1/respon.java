@@ -6,11 +6,6 @@ public class respon {
     String value;
     String message;
     String jwt;
-    String TOTAL;
-
-    public String getTOTAL() {
-        return TOTAL;
-    }
 
     List<tampil> result;
 

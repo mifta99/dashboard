@@ -23,7 +23,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class KkActivity extends AppCompatActivity {
-    TextView tanggal, bulan, tahun, hari;
+    TextView tanggal, bulan, tahun, hari, total_kab;
     private List<tampil> results = new ArrayList<>();
     private KkAdapter kkAdapter;
     RecyclerView tampilKk;
@@ -39,6 +39,7 @@ public class KkActivity extends AppCompatActivity {
         tahun = findViewById(R.id.tv_year);
         hari = findViewById(R.id.tv_day);
         progressBar = findViewById(R.id.progressBar);
+        total_kab = findViewById(R.id.tv_totalKab);
 
         Calendar calendar = Calendar.getInstance();
         int year = calendar.get(Calendar.YEAR);
@@ -49,19 +50,19 @@ public class KkActivity extends AppCompatActivity {
         int month = calendar.get(Calendar.MONTH);
         bulan.setText(String.valueOf(month + 1));
         int day = calendar.get(Calendar.DAY_OF_WEEK);
-        if (day == 1) {
+        if (day == 2) {
             hari.setText("Senin");
-        } else if (day == 2) {
-            hari.setText("Selasa");
         } else if (day == 3) {
-            hari.setText("Rabu");
+            hari.setText("Selasa");
         } else if (day == 4) {
-            hari.setText("Kamis");
+            hari.setText("Rabu");
         } else if (day == 5) {
-            hari.setText("Jum'at");
+            hari.setText("Kamis");
         } else if (day == 6) {
-            hari.setText("Sabtu");
+            hari.setText("Jum'at");
         } else if (day == 7) {
+            hari.setText("Sabtu");
+        } else if (day == 1) {
             hari.setText("Minggu");
         }
 
@@ -72,7 +73,8 @@ public class KkActivity extends AppCompatActivity {
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         tampilKk.setLayoutManager(llm);
 
-        tampil();
+        tampil_kab();
+        tampil_kec();
     }
 
     private void showLoading(Boolean state) {
@@ -84,7 +86,7 @@ public class KkActivity extends AppCompatActivity {
     }
 
 
-    private void tampil() {
+    private void tampil_kec() {
         final SharedPreferences sharedPreferences = getSharedPreferences("myproject", Context.MODE_PRIVATE);
         final String jwt_ = sharedPreferences.getString("jwt", "0");
         API api = koneksi.getClient().create(API.class);
@@ -119,7 +121,40 @@ public class KkActivity extends AppCompatActivity {
             }
         });
     }
+    private void tampil_kab() {
+        final SharedPreferences sharedPreferences = getSharedPreferences("myproject", Context.MODE_PRIVATE);
+        final String jwt_ = sharedPreferences.getString("jwt", "0");
+        API api = koneksi.getClient().create(API.class);
 
+        Call<respon> aksi = api.count_kk_kab();
+
+        aksi.enqueue(new Callback<respon>() {
+            @Override
+            public void onResponse(Call<respon> call, Response<respon> response) {
+                String kode = response.body().getValue();
+                results.clear();
+                if (kode.equals("1")) {
+                    results = response.body().getResult();
+                    for (int i = 0; i < results.size(); i++) {
+                        total_kab.setText(String.valueOf(results.get(i).TOTAL));
+                    }
+//                Log.d("coderespon", String.valueOf(response.code()));
+//                if (response.code() != 200){
+//                   Toast.makeText(KkActivity.this, "Token tidak valid atau Token expired", Toast.LENGTH_SHORT).show();
+//                    logout();
+//                }else {
+//
+//                    }
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<respon> call, Throwable t) {
+
+            }
+        });
+    }
     private void logout() {
         final SharedPreferences sharedPreferences = getSharedPreferences("myproject", Context.MODE_PRIVATE);
         SharedPreferences.Editor akses = sharedPreferences.edit();
