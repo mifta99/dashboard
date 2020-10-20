@@ -39,12 +39,13 @@
                     android:layout_height="match_parent"
                     android:textColor="#897537"
                     android:fontFamily="@font/nexabold" />
+
                 <TextView
-                    android:text="Surat Datang"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:textColor="#897537"
-                    android:fontFamily="@font/nexabold" />
+                    android:fontFamily="@font/nexabold"
+                    android:text="Akta Perceraian"
+                    android:textColor="#897537" />
             </LinearLayout>
 
             <LinearLayout
@@ -115,7 +116,7 @@
         android:padding="16dp"
         app:layout_constraintTop_toBottomOf="@id/table"
         tools:layout_editor_absoluteX="-16dp"
-        tools:listitem="@layout/custom_surat_datang"/>
+        tools:listitem="@layout/custom_akta_perceraian"/>
 
     <ProgressBar
         android:id="@+id/progressBar"

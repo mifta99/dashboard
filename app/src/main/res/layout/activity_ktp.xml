@@ -30,19 +30,17 @@
                     android:layout_height="60dp"
                     android:fontFamily="@font/nexabold"
                     android:layout_marginBottom="10dp"
-                    android:text="150"
+                    android:text="0"
                     android:textColor="#897537"
                     android:textSize="65sp" />
-
                 <TextView
+                    android:text="Total Permohonan"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:fontFamily="@font/nexabold"
-                    android:text="Total Permohonan"
-                    android:textColor="#897537" />
-
+                    android:textColor="#897537"
+                    android:fontFamily="@font/nexabold" />
                 <TextView
-                    android:text="KTP-Elektronik"
+                    android:text="KTP"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textColor="#897537"
@@ -106,14 +104,30 @@
 
         </TableRow>
     </TableLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_kk"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/bg_field"
+        android:padding="16dp"
         app:layout_constraintTop_toBottomOf="@id/table"
-        tools:listitem="@layout/custom_Kk">
-    </androidx.recyclerview.widget.RecyclerView>
+        tools:layout_editor_absoluteX="-16dp"
+        tools:listitem="@layout/custom_kk"/>
 
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="@android:style/Widget.ProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:foregroundGravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:visibility="visible"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/table"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
