@@ -19,5 +19,7 @@ public class AktaKelahiranActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_akta_kelahiran);
+
+        progressBar = findViewById(R.id.progressBarakta);
     }
 }
