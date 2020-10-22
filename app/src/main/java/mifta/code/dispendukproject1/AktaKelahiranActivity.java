@@ -14,6 +14,7 @@ import static mifta.code.dispendukproject1.Colors.colors;
 
 public class AktaKelahiranActivity extends AppCompatActivity {
 
+    ProgressBar progressBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
