@@ -14,6 +14,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.github.ybq.android.spinkit.SpinKitView;
+import com.github.ybq.android.spinkit.SpriteFactory;
+import com.github.ybq.android.spinkit.Style;
+import com.github.ybq.android.spinkit.sprite.CircleSprite;
+import com.github.ybq.android.spinkit.sprite.Sprite;
+import com.github.ybq.android.spinkit.style.Circle;
+import com.github.ybq.android.spinkit.style.DoubleBounce;
+import com.github.ybq.android.spinkit.style.Wave;
+
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -22,12 +31,15 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import static mifta.code.dispendukproject1.Colors.colors;
+
 public class KkActivity extends AppCompatActivity {
     TextView tanggal, bulan, tahun, hari, total_kab;
     private List<tampil> results = new ArrayList<>();
     private KkAdapter kkAdapter;
     RecyclerView tampilKk;
     ProgressBar progressBar;
+    SpinKitView spinKitView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +52,8 @@ public class KkActivity extends AppCompatActivity {
         hari = findViewById(R.id.tv_day);
         progressBar = findViewById(R.id.progressBar);
         total_kab = findViewById(R.id.tv_totalKab);
+//        spinKitView = findViewById(R.id.spin_kit);
+
 
         Calendar calendar = Calendar.getInstance();
         int year = calendar.get(Calendar.YEAR);
@@ -69,6 +83,12 @@ public class KkActivity extends AppCompatActivity {
         tampilKk = findViewById(R.id.rv_kk);
         tampilKk.setHasFixedSize(true);
 
+        Circle doubleBounce = new Circle();
+//        doubleBounce.setBounds(0, 0, 100, 100);
+        doubleBounce.setColor(colors[8]);
+        progressBar.setIndeterminateDrawable(doubleBounce);
+        progressBar.setVisibility(View.VISIBLE);
+
         LinearLayoutManager llm = new LinearLayoutManager(this);
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         tampilKk.setLayoutManager(llm);
@@ -77,13 +97,14 @@ public class KkActivity extends AppCompatActivity {
         tampil_kec();
     }
 
-    private void showLoading(Boolean state) {
-        if (state) {
-            progressBar.setVisibility(View.VISIBLE);
-        } else {
-            progressBar.setVisibility(View.GONE);
-        }
-    }
+//    private void showLoading(Boolean state) {
+//        if (state) {
+//
+//            progressBar.setVisibility(View.VISIBLE);
+//        } else {
+//            progressBar.setVisibility(View.GONE);
+//        }
+//    }
 
 
     private void tampil_kec() {
@@ -96,11 +117,13 @@ public class KkActivity extends AppCompatActivity {
         aksi.enqueue(new Callback<respon>() {
             @Override
             public void onResponse(Call<respon> call, Response<respon> response) {
-                showLoading(true);
+//                showLoading(true);
+                progressBar.setVisibility(View.VISIBLE);
                 String kode = response.body().getValue();
                 results.clear();
                 if (kode.equals("1")) {
-                    showLoading(false);
+//                    showLoading(false);
+                    progressBar.setVisibility(View.GONE);
                     results = response.body().getResult();
                     kkAdapter = new KkAdapter(KkActivity.this, results);
                     tampilKk.setAdapter(kkAdapter);

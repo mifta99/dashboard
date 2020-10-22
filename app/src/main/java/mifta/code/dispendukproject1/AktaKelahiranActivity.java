@@ -21,5 +21,10 @@ public class AktaKelahiranActivity extends AppCompatActivity {
         setContentView(R.layout.activity_akta_kelahiran);
 
         progressBar = findViewById(R.id.progressBarakta);
+
+        Circle doubleBounce = new Circle();
+//        doubleBounce.setBounds(0, 0, 100, 100);
+        doubleBounce.setColor(colors[7]);
+        progressBar.setIndeterminateDrawable(doubleBounce);
     }
 }

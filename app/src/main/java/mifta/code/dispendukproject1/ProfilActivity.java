@@ -21,6 +21,8 @@ public class ProfilActivity extends AppCompatActivity implements View.OnClickLis
     TextView nama, nip, jabatan;
     Button logout;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
