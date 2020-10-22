@@ -12,6 +12,9 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
+import mifta.code.dispendukproject1.Adapter.AktaKelahiranAdapter;
+import mifta.code.dispendukproject1.Model.tampil;
+
 public class AktaKelahiranActivity extends AppCompatActivity {
     TextView tanggal, bulan, tahun, hari, total_kab;
     private List<tampil> results = new ArrayList<>();
