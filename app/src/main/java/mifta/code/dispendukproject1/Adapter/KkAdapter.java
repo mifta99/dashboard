@@ -34,7 +34,7 @@ public class KkAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         MyHolder myHolder = (MyHolder) holder;
         tampil result = results.get(position);
-        myHolder.nama_kec.setText("Kecamatan "+result.getNO_KEC());
+        myHolder.nama_kec.setText("KECAMATAN "+result.getNAMA_KEC());
         myHolder.total_kec.setText(result.getJUMLAH());
     }
 
