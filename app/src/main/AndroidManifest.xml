@@ -12,26 +12,26 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".KtpPencetakanActivity"></activity>
-        <activity android:name=".KtpPerekamanActivity" />
-        <activity android:name=".AktaPerceraianActivity" />
-        <activity android:name=".AktaPerkawinanActivity" />
-        <activity android:name=".AktaKematianActivity" />
-        <activity android:name=".AktaKelahiranActivity" />
+        <activity android:name=".Activity.AktaKelahiranActivity$KtpPencetakanActivity"></activity>
+        <activity android:name=".Activity.AktaKelahiranActivity$KtpPerekamanActivity" />
+        <activity android:name=".Activity.AktaPerceraianActivity" />
+        <activity android:name=".Activity.AktaPerkawinanActivity" />
+        <activity android:name=".Activity.AktaKematianActivity" />
+        <activity android:name=".Activity.AktaKelahiranActivity" />
         <activity
-            android:name=".BiodataActivity"
+            android:name=".Activity.BiodataActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".SuratPindahActivity"
+            android:name=".Activity.SuratPindahActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".SuratDatangActivity"
+            android:name=".Activity.SuratDatangActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".ProfilActivity"
+            android:name=".Activity.ProfilActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".SplashActivity"
+            android:name=".Activity.SplashActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -40,17 +40,17 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AkteActivity"
+            android:name=".Activity.AkteActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".KtpActivity"
+            android:name=".Activity.AktaKelahiranActivity$KtpActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".KkActivity"
+            android:name=".Activity.KkActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".DashboardActivity" />
+        <activity android:name=".Activity.DashboardActivity" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".Activity.AktaKelahiranActivity$LoginActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
     </application>
 

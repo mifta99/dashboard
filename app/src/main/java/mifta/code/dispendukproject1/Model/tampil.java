@@ -1,4 +1,4 @@
-package mifta.code.dispendukproject1;
+package mifta.code.dispendukproject1.Model;
 
 public class tampil {
     String JUMLAH, NO_KEC;

@@ -1,4 +1,4 @@
-package mifta.code.dispendukproject1;
+package mifta.code.dispendukproject1.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,17 +7,17 @@ import android.widget.ProgressBar;
 
 import com.github.ybq.android.spinkit.style.Circle;
 
-import static mifta.code.dispendukproject1.Colors.colors;
+import mifta.code.dispendukproject1.R;
 
-public class BiodataActivity extends AppCompatActivity {
+import static mifta.code.dispendukproject1.Utils.Colors.colors;
+
+public class AktaKematianActivity extends AppCompatActivity {
 
     ProgressBar progressBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_biodata);
-
-        progressBar = findViewById(R.id.progressBar);
+        setContentView(R.layout.activity_akta_kematian);
 
         Circle doubleBounce = new Circle();
 //        doubleBounce.setBounds(0, 0, 100, 100);

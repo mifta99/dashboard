@@ -1,4 +1,4 @@
-package mifta.code.dispendukproject1;
+package mifta.code.dispendukproject1.Utils;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

@@ -1,4 +1,4 @@
-package mifta.code.dispendukproject1;
+package mifta.code.dispendukproject1.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,7 +7,9 @@ import android.widget.ProgressBar;
 
 import com.github.ybq.android.spinkit.style.Circle;
 
-import static mifta.code.dispendukproject1.Colors.colors;
+import mifta.code.dispendukproject1.R;
+
+import static mifta.code.dispendukproject1.Utils.Colors.colors;
 
 public class SuratDatangActivity extends AppCompatActivity {
 

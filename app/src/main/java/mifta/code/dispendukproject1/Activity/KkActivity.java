@@ -1,37 +1,35 @@
-package mifta.code.dispendukproject1;
+package mifta.code.dispendukproject1.Activity;
 
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.github.ybq.android.spinkit.SpinKitView;
-import com.github.ybq.android.spinkit.SpriteFactory;
-import com.github.ybq.android.spinkit.Style;
-import com.github.ybq.android.spinkit.sprite.CircleSprite;
-import com.github.ybq.android.spinkit.sprite.Sprite;
 import com.github.ybq.android.spinkit.style.Circle;
-import com.github.ybq.android.spinkit.style.DoubleBounce;
-import com.github.ybq.android.spinkit.style.Wave;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
+import mifta.code.dispendukproject1.Utils.API;
+import mifta.code.dispendukproject1.Adapter.KkAdapter;
+import mifta.code.dispendukproject1.R;
+import mifta.code.dispendukproject1.Utils.koneksi;
+import mifta.code.dispendukproject1.Model.respon;
+import mifta.code.dispendukproject1.Model.tampil;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-import static mifta.code.dispendukproject1.Colors.colors;
+import static mifta.code.dispendukproject1.Utils.Colors.colors;
 
 public class KkActivity extends AppCompatActivity {
     TextView tanggal, bulan, tahun, hari, total_kab;
@@ -159,7 +157,7 @@ public class KkActivity extends AppCompatActivity {
                 if (kode.equals("1")) {
                     results = response.body().getResult();
                     for (int i = 0; i < results.size(); i++) {
-                        total_kab.setText(String.valueOf(results.get(i).TOTAL));
+                        total_kab.setText(String.valueOf(results.get(i).getTOTAL()));
                     }
 //                Log.d("coderespon", String.valueOf(response.code()));
 //                if (response.code() != 200){
@@ -183,7 +181,7 @@ public class KkActivity extends AppCompatActivity {
         SharedPreferences.Editor akses = sharedPreferences.edit();
         akses.clear();
         akses.commit();
-        startActivity(new Intent(KkActivity.this, LoginActivity.class));
+        startActivity(new Intent(KkActivity.this, AktaKelahiranActivity.LoginActivity.class));
         finish();
     }
 }

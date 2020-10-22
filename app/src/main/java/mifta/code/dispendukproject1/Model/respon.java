@@ -1,6 +1,8 @@
-package mifta.code.dispendukproject1;
+package mifta.code.dispendukproject1.Model;
 
 import java.util.List;
+
+import mifta.code.dispendukproject1.Model.tampil;
 
 public class respon {
     String value;

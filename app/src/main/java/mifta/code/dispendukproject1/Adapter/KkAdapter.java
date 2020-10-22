@@ -1,4 +1,4 @@
-package mifta.code.dispendukproject1;
+package mifta.code.dispendukproject1.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,6 +9,9 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
+
+import mifta.code.dispendukproject1.R;
+import mifta.code.dispendukproject1.Model.tampil;
 
 public class KkAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private Context context;

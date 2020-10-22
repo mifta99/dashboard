@@ -1,4 +1,4 @@
-package mifta.code.dispendukproject1;
+package mifta.code.dispendukproject1.Activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -16,6 +16,8 @@ import com.auth0.android.jwt.JWT;
 import com.bumptech.glide.Glide;
 
 import java.util.List;
+
+import mifta.code.dispendukproject1.R;
 
 public class DashboardActivity extends AppCompatActivity implements View.OnClickListener {
     TextView txtUser;
@@ -68,7 +70,7 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
                 startActivity(a);
                 break;
             case R.id.im_ktp:
-                Intent b = new Intent(DashboardActivity.this, KtpActivity.class);
+                Intent b = new Intent(DashboardActivity.this, AktaKelahiranActivity.KtpActivity.class);
                 startActivity(b);
                 break;
             case R.id.im_akta:
@@ -117,7 +119,7 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
         SharedPreferences.Editor akses = sharedPreferences.edit();
         akses.clear();
         akses.commit();
-        startActivity(new Intent(DashboardActivity.this, LoginActivity.class));
+        startActivity(new Intent(DashboardActivity.this, AktaKelahiranActivity.LoginActivity.class));
         finish();
     }
 }

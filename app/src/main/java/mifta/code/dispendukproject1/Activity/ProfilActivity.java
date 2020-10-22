@@ -1,4 +1,4 @@
-package mifta.code.dispendukproject1;
+package mifta.code.dispendukproject1.Activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,6 +15,8 @@ import com.auth0.android.jwt.JWT;
 import com.bumptech.glide.Glide;
 
 import java.util.List;
+
+import mifta.code.dispendukproject1.R;
 
 public class ProfilActivity extends AppCompatActivity implements View.OnClickListener {
     ImageView foto, back;
@@ -76,7 +78,7 @@ public class ProfilActivity extends AppCompatActivity implements View.OnClickLis
         SharedPreferences.Editor akses = sharedPreferences.edit();
         akses.clear();
         akses.commit();
-        startActivity(new Intent(ProfilActivity.this, LoginActivity.class));
+        startActivity(new Intent(ProfilActivity.this, AktaKelahiranActivity.LoginActivity.class));
         finish();
     }
 }

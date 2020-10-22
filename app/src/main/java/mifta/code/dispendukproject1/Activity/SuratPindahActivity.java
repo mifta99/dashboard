@@ -1,30 +1,29 @@
-package mifta.code.dispendukproject1;
+package mifta.code.dispendukproject1.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ProgressBar;
 
-import com.github.ybq.android.spinkit.sprite.CircleSprite;
 import com.github.ybq.android.spinkit.style.Circle;
-import com.github.ybq.android.spinkit.style.DoubleBounce;
 
-import static mifta.code.dispendukproject1.Colors.colors;
+import mifta.code.dispendukproject1.R;
 
-public class AktaKelahiranActivity extends AppCompatActivity {
+import static mifta.code.dispendukproject1.Utils.Colors.colors;
+
+public class SuratPindahActivity extends AppCompatActivity {
 
     ProgressBar progressBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_akta_kelahiran);
+        setContentView(R.layout.activity_surat_pindah);
 
-        progressBar = findViewById(R.id.progressBarakta);
+        progressBar = findViewById(R.id.progressBar);
 
         Circle doubleBounce = new Circle();
 //        doubleBounce.setBounds(0, 0, 100, 100);
-        doubleBounce.setColor(colors[7]);
+        doubleBounce.setColor(colors[8]);
         progressBar.setIndeterminateDrawable(doubleBounce);
     }
 }
