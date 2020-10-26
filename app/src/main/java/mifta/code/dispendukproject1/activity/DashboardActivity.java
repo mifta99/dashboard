@@ -64,13 +64,11 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.im_kk:
-                SharedPreferences sharedPreferences = getSharedPreferences("myproject", Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor = sharedPreferences.edit();
                 Intent a = new Intent(DashboardActivity.this, KkActivity.class);
                 startActivity(a);
                 break;
             case R.id.im_ktp:
-                Intent b = new Intent(DashboardActivity.this, KtpActivity.class);
+                Intent b = new Intent(DashboardActivity.this, KtpPerekamanActivity.class);
                 startActivity(b);
                 break;
             case R.id.im_akta:

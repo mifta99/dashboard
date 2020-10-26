@@ -107,6 +107,7 @@ public class KkActivity extends AppCompatActivity {
                     showLoading(false);
                     results = response.body().getResult();
                     kkAdapter = new KkAdapter(KkActivity.this, results);
+                    kkAdapter.notifyDataSetChanged();
                     tampilKk.setAdapter(kkAdapter);
 //                Log.d("coderespon", String.valueOf(response.code()));
 //                if (response.code() != 200){

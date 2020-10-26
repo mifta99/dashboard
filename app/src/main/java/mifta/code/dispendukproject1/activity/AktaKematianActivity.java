@@ -4,7 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -14,12 +18,19 @@ import java.util.List;
 
 import mifta.code.dispendukproject1.adapter.AktaKelahiranAdapter;
 import mifta.code.dispendukproject1.R;
+import mifta.code.dispendukproject1.adapter.AktaKematianAdapter;
+import mifta.code.dispendukproject1.api.API;
+import mifta.code.dispendukproject1.api.koneksi;
+import mifta.code.dispendukproject1.api.respon;
 import mifta.code.dispendukproject1.api.tampil;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class AktaKematianActivity extends AppCompatActivity {
     TextView tanggal, bulan, tahun, hari, total_kab;
     private List<tampil> results = new ArrayList<>();
-    private AktaKelahiranAdapter aktaKelahiranAdapter;
+    private AktaKematianAdapter aktaKematianAdapter;
     RecyclerView recyclerView;
     ProgressBar progressBar;
 
@@ -67,7 +78,96 @@ public class AktaKematianActivity extends AppCompatActivity {
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(llm);
 
-        //tampil_kab();
-        //tampil_kec();
+        tampil_kab();
+        tampil_kec();
+    }
+
+    private void showLoading(Boolean state) {
+        if (state) {
+            progressBar.setVisibility(View.VISIBLE);
+        } else {
+            progressBar.setVisibility(View.GONE);
+        }
+    }
+
+
+    private void tampil_kec() {
+        final SharedPreferences sharedPreferences = getSharedPreferences("myproject", Context.MODE_PRIVATE);
+        final String jwt_ = sharedPreferences.getString("jwt", "0");
+        API api = koneksi.getClient().create(API.class);
+
+        Call<respon> aksi = api.count_kematian_kec();
+
+        aksi.enqueue(new Callback<respon>() {
+            @Override
+            public void onResponse(Call<respon> call, Response<respon> response) {
+                showLoading(true);
+                String kode = response.body().getValue();
+                results.clear();
+                if (kode.equals("1")) {
+                    showLoading(false);
+                    results = response.body().getResult();
+                    aktaKematianAdapter = new AktaKematianAdapter(AktaKematianActivity.this, results);
+                    aktaKematianAdapter.notifyDataSetChanged();
+                    recyclerView.setAdapter(aktaKematianAdapter);
+//                Log.d("coderespon", String.valueOf(response.code()));
+//                if (response.code() != 200){
+//                   Toast.makeText(KkActivity.this, "Token tidak valid atau Token expired", Toast.LENGTH_SHORT).show();
+//                    logout();
+//                }else {
+//
+//                    }
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<respon> call, Throwable t) {
+
+            }
+        });
+    }
+    private void tampil_kab() {
+        final SharedPreferences sharedPreferences = getSharedPreferences("myproject", Context.MODE_PRIVATE);
+        final String jwt_ = sharedPreferences.getString("jwt", "0");
+        API api = koneksi.getClient().create(API.class);
+
+        Call<respon> aksi = api.count_kematian_kab();
+
+        aksi.enqueue(new Callback<respon>() {
+            @Override
+            public void onResponse(Call<respon> call, Response<respon> response) {
+                String kode = response.body().getValue();
+                results.clear();
+                if (kode.equals("1")) {
+                    results = response.body().getResult();
+                    for (int i = 0; i < results.size(); i++) {
+                        total_kab.setText(String.valueOf(results.get(i).TOTAL));
+                    }
+//                Log.d("coderespon", String.valueOf(response.code()));
+//                if (response.code() != 200){
+//                   Toast.makeText(KkActivity.this, "Token tidak valid atau Token expired", Toast.LENGTH_SHORT).show();
+//                    logout();
+//                }else {
+//
+//                    }
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<respon> call, Throwable t) {
+
+            }
+        });
+    }
+
+    private void logout() {
+        final SharedPreferences sharedPreferences = getSharedPreferences("myproject", Context.MODE_PRIVATE);
+        SharedPreferences.Editor akses = sharedPreferences.edit();
+        akses.clear();
+        akses.commit();
+        startActivity(new Intent(AktaKematianActivity.this, LoginActivity.class));
+        finish();
     }
 }

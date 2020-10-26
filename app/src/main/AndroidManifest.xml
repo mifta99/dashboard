@@ -13,11 +13,16 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity android:name=".activity.KtpPencetakanActivity"></activity>
-        <activity android:name=".activity.KtpPerekamanActivity" />
-        <activity android:name=".activity.AktaPerceraianActivity" />
-        <activity android:name=".activity.AktaPerkawinanActivity" />
-        <activity android:name=".activity.AktaKematianActivity" />
-        <activity android:name=".activity.AktaKelahiranActivity" />
+        <activity android:name=".activity.KtpPerekamanActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".activity.AktaPerceraianActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".activity.AktaPerkawinanActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".activity.AktaKematianActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".activity.AktaKelahiranActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity
             android:name=".activity.BiodataActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
