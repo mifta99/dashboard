@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_centerHorizontal="true"
     android:layout_gravity="center_horizontal"
-    tools:context=".Activity.DashboardActivity">
+    android:layout_centerHorizontal="true"
+    tools:context=".DashboardActivity">
 
     <LinearLayout
         android:id="@+id/linearLayout2"
@@ -38,24 +38,23 @@
     <RelativeLayout
         android:id="@+id/relative"
         android:layout_width="match_parent"
-        android:layout_height="500dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="@drawable/bg_field"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/im_foto">
+        app:layout_constraintTop_toTopOf="@+id/guideline">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@id/relative"
-            android:gravity="center"
+            android:gravity="center_vertical|fill"
             tools:ignore="NotSibling">
 
             <TableLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
+                android:layout_marginTop="90dp"
+                android:gravity="center_vertical"
                 android:layout_marginRight="16dp"
                 android:layout_marginBottom="16dp">
 
@@ -167,9 +166,17 @@
                         android:text="Biodata" />
                 </TableRow>
             </TableLayout>
+
         </RelativeLayout>
     </RelativeLayout>
 
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guideline"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5"/>
 
     <ImageView
         android:id="@+id/im_foto"
@@ -177,10 +184,10 @@
         android:layout_height="115dp"
         android:layout_gravity="center"
         android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout2"
         app:srcCompat="@drawable/foto" />
 
 
