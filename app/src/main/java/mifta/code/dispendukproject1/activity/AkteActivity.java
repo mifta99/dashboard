@@ -1,8 +1,10 @@
-package mifta.code.dispendukproject1;
+package mifta.code.dispendukproject1.activity;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import mifta.code.dispendukproject1.R;
 
 public class AkteActivity extends AppCompatActivity {
 

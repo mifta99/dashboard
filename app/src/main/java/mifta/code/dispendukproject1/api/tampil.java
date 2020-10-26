@@ -1,15 +1,15 @@
-package mifta.code.dispendukproject1;
+package mifta.code.dispendukproject1.api;
 
 public class tampil {
-    String JUMLAH;
-    String NO_KEC;
+    public String JUMLAH;
+    public String NO_KEC;
 
     public String getNAMA_KEC() {
         return NAMA_KEC;
     }
 
-    String NAMA_KEC;
-    String TOTAL;
+    public String NAMA_KEC;
+    public String TOTAL;
 
     public String getTOTAL() {
         return TOTAL;

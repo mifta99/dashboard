@@ -1,14 +1,16 @@
-package mifta.code.dispendukproject1;
+package mifta.code.dispendukproject1.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class SuratDatangActivity extends AppCompatActivity {
+import mifta.code.dispendukproject1.R;
+
+public class KtpActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_surat_datang);
+        setContentView(R.layout.activity_ktp);
     }
 }

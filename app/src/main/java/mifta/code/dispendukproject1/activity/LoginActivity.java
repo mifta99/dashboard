@@ -1,4 +1,4 @@
-package mifta.code.dispendukproject1;
+package mifta.code.dispendukproject1.activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,6 +11,10 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import mifta.code.dispendukproject1.api.API;
+import mifta.code.dispendukproject1.R;
+import mifta.code.dispendukproject1.api.koneksi;
+import mifta.code.dispendukproject1.api.respon;
 import retrofit2.Call;
 import retrofit2.Callback;
 

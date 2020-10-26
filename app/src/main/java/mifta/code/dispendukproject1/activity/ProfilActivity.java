@@ -1,4 +1,4 @@
-package mifta.code.dispendukproject1;
+package mifta.code.dispendukproject1.activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,6 +15,8 @@ import com.auth0.android.jwt.JWT;
 import com.bumptech.glide.Glide;
 
 import java.util.List;
+
+import mifta.code.dispendukproject1.R;
 
 public class ProfilActivity extends AppCompatActivity implements View.OnClickListener {
     ImageView foto, back;

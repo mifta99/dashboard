@@ -12,26 +12,26 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".KtpPencetakanActivity"></activity>
-        <activity android:name=".KtpPerekamanActivity" />
-        <activity android:name=".AktaPerceraianActivity" />
-        <activity android:name=".AktaPerkawinanActivity" />
-        <activity android:name=".AktaKematianActivity" />
-        <activity android:name=".AktaKelahiranActivity" />
+        <activity android:name=".activity.KtpPencetakanActivity"></activity>
+        <activity android:name=".activity.KtpPerekamanActivity" />
+        <activity android:name=".activity.AktaPerceraianActivity" />
+        <activity android:name=".activity.AktaPerkawinanActivity" />
+        <activity android:name=".activity.AktaKematianActivity" />
+        <activity android:name=".activity.AktaKelahiranActivity" />
         <activity
-            android:name=".BiodataActivity"
+            android:name=".activity.BiodataActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".SuratPindahActivity"
+            android:name=".activity.SuratPindahActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".SuratDatangActivity"
+            android:name=".activity.SuratDatangActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".ProfilActivity"
+            android:name=".activity.ProfilActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".SplashActivity"
+            android:name=".activity.SplashActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -40,17 +40,17 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AkteActivity"
+            android:name=".activity.AkteActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".KtpActivity"
+            android:name=".activity.KtpActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".KkActivity"
+            android:name=".activity.KkActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".DashboardActivity" />
+        <activity android:name=".activity.DashboardActivity" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".activity.LoginActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
     </application>
 

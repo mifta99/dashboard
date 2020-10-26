@@ -1,4 +1,4 @@
-package mifta.code.dispendukproject1;
+package mifta.code.dispendukproject1.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -11,6 +11,10 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+
+import mifta.code.dispendukproject1.adapter.AktaKelahiranAdapter;
+import mifta.code.dispendukproject1.R;
+import mifta.code.dispendukproject1.api.tampil;
 
 public class AktaKelahiranActivity extends AppCompatActivity {
     TextView tanggal, bulan, tahun, hari, total_kab;
