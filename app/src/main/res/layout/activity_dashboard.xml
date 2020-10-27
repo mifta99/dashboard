@@ -10,9 +10,11 @@
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="250dp"
+        android:layout_height="200dp"
+        android:layout_marginBottom="166dp"
         android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/relative"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -28,10 +30,11 @@
 
         <ImageView
             android:id="@+id/imageView3"
-            android:layout_width="250dp"
-            android:layout_height="271dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            app:srcCompat="@drawable/bgpic" />
+            android:layout_gravity="center"
+            android:background="@drawable/bgpic" />
 
     </LinearLayout>
 
@@ -208,7 +211,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/linearLayout2"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintVertical_bias="0.27999997"
         app:srcCompat="@drawable/foto" />
 
 
