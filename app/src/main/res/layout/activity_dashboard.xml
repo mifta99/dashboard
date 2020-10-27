@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="center_horizontal"
     android:layout_centerHorizontal="true"
+    android:layout_gravity="center_horizontal"
     tools:context=".DashboardActivity">
 
     <LinearLayout
@@ -43,140 +43,161 @@
         android:background="@drawable/bg_field"
         app:layout_constraintTop_toTopOf="@+id/guideline">
 
-        <RelativeLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center_vertical|fill"
             tools:ignore="NotSibling">
 
-            <TableLayout
-                android:layout_width="match_parent"
+            <RelativeLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="90dp"
-                android:gravity="center_vertical"
-                android:layout_marginRight="16dp"
-                android:layout_marginBottom="16dp">
+                android:gravity="center_vertical|fill"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.16000003"
+                tools:ignore="NotSibling">
 
-                <TableRow>
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
-                    <ImageView
-                        android:id="@+id/im_ktp"
-                        android:layout_width="115dp"
-                        android:layout_height="86dp"
-                        android:layout_weight="1"
-                        android:clickable="true"
-                        android:foreground="?android:attr/selectableItemBackground"
-                        app:srcCompat="@drawable/ic_ktp" />
+                    <TableRow>
 
-                    <ImageView
-                        android:id="@+id/im_kk"
-                        android:layout_width="115dp"
-                        android:layout_height="86dp"
-                        android:layout_weight="1"
-                        android:clickable="true"
-                        android:foreground="?android:attr/selectableItemBackground"
-                        app:srcCompat="@drawable/ic_kk" />
+                        <ImageView
+                            android:id="@+id/im_ktp"
+                            android:layout_width="115dp"
+                            android:layout_height="86dp"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            app:srcCompat="@drawable/ic_ktp" />
 
-                    <ImageView
-                        android:id="@+id/im_akta"
-                        android:layout_width="115dp"
-                        android:layout_height="86dp"
-                        android:layout_weight="1"
-                        android:clickable="true"
-                        android:foreground="?android:attr/selectableItemBackground"
-                        app:srcCompat="@drawable/ic_akta" />
-                </TableRow>
+                        <ImageView
+                            android:id="@+id/im_kk"
+                            android:layout_width="115dp"
+                            android:layout_height="86dp"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            app:srcCompat="@drawable/ic_kk" />
 
-                <TableRow android:layout_gravity="center_horizontal">
+                        <ImageView
+                            android:id="@+id/im_akta"
+                            android:layout_width="115dp"
+                            android:layout_height="86dp"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            app:srcCompat="@drawable/ic_akta" />
+                    </TableRow>
 
-                    <TextView
-                        android:layout_weight="1"
-                        android:clickable="true"
-                        android:fontFamily="@font/nexabold"
-                        android:foreground="?android:attr/selectableItemBackground"
-                        android:gravity="center_horizontal"
-                        android:text="KTP-Elektronik" />
+                    <TableRow android:layout_gravity="center_horizontal">
 
-                    <TextView
-                        android:layout_weight="1"
-                        android:clickable="true"
-                        android:fontFamily="@font/nexabold"
-                        android:foreground="?android:attr/selectableItemBackground"
-                        android:gravity="center_horizontal"
-                        android:text="Kartu Keluarga" />
+                        <TextView
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:fontFamily="@font/nexabold"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:gravity="center_horizontal"
+                            android:text="KTP-Elektronik" />
 
-                    <TextView
-                        android:layout_weight="1"
-                        android:clickable="true"
-                        android:fontFamily="@font/nexabold"
-                        android:foreground="?android:attr/selectableItemBackground"
-                        android:gravity="center_horizontal"
-                        android:text="Akta" />
-                </TableRow>
+                        <TextView
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:fontFamily="@font/nexabold"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:gravity="center_horizontal"
+                            android:text="Kartu Keluarga" />
 
-                <TableRow android:layout_marginTop="10dp">
+                        <TextView
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:fontFamily="@font/nexabold"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:gravity="center_horizontal"
+                            android:text="Akta" />
+                    </TableRow>
 
-                    <ImageView
-                        android:id="@+id/im_datang"
-                        android:layout_width="115dp"
-                        android:layout_height="86dp"
-                        android:layout_weight="1"
-                        android:clickable="true"
-                        android:foreground="?android:attr/selectableItemBackground"
-                        app:srcCompat="@drawable/ic_kedatangan" />
+                    <TableRow android:layout_marginTop="10dp">
 
-                    <ImageView
-                        android:id="@+id/im_pindah"
-                        android:layout_width="115dp"
-                        android:layout_height="86dp"
-                        android:layout_weight="1"
-                        android:clickable="true"
-                        android:foreground="?android:attr/selectableItemBackground"
-                        app:srcCompat="@drawable/ic_pindah" />
+                        <ImageView
+                            android:id="@+id/im_datang"
+                            android:layout_width="115dp"
+                            android:layout_height="86dp"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            app:srcCompat="@drawable/ic_kedatangan" />
 
-                    <ImageView
-                        android:id="@+id/im_biodata"
-                        android:layout_width="115dp"
-                        android:layout_height="86dp"
-                        android:layout_weight="1"
-                        android:clickable="true"
-                        android:foreground="?android:attr/selectableItemBackground"
-                        app:srcCompat="@drawable/ic_biodata" />
-                </TableRow>
+                        <ImageView
+                            android:id="@+id/im_pindah"
+                            android:layout_width="115dp"
+                            android:layout_height="86dp"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            app:srcCompat="@drawable/ic_pindah" />
 
-                <TableRow android:layout_gravity="center_horizontal">
+                        <ImageView
+                            android:id="@+id/im_biodata"
+                            android:layout_width="115dp"
+                            android:layout_height="86dp"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            app:srcCompat="@drawable/ic_biodata" />
+                    </TableRow>
 
-                    <TextView
-                        android:layout_weight="1"
-                        android:fontFamily="@font/nexabold"
-                        android:gravity="center_horizontal"
-                        android:text="Surat Datang" />
+                    <TableRow android:layout_gravity="center_horizontal">
 
-                    <TextView
-                        android:layout_weight="1"
-                        android:fontFamily="@font/nexabold"
-                        android:gravity="center_horizontal"
-                        android:text="Surat Pindah" />
+                        <TextView
+                            android:layout_weight="1"
+                            android:fontFamily="@font/nexabold"
+                            android:gravity="center_horizontal"
+                            android:text="Surat Datang" />
 
-                    <TextView
-                        android:layout_weight="1"
-                        android:fontFamily="@font/nexabold"
-                        android:gravity="center_horizontal"
-                        android:text="Biodata" />
-                </TableRow>
-            </TableLayout>
+                        <TextView
+                            android:layout_weight="1"
+                            android:fontFamily="@font/nexabold"
+                            android:gravity="center_horizontal"
+                            android:text="Surat Pindah" />
 
-        </RelativeLayout>
+                        <TextView
+                            android:layout_weight="1"
+                            android:fontFamily="@font/nexabold"
+                            android:gravity="center_horizontal"
+                            android:text="Biodata" />
+                    </TableRow>
+                </TableLayout>
+            </RelativeLayout>
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barir1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="top"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </RelativeLayout>
 
 
     <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/guideline"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.5"/>
+        app:layout_constraintGuide_percent="0.5" />
 
     <ImageView
         android:id="@+id/im_foto"
