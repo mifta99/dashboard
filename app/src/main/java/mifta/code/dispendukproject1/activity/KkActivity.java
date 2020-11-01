@@ -82,17 +82,24 @@ public class KkActivity extends AppCompatActivity {
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         tampilKk.setLayoutManager(llm);
 
+        Circle doubleBounce = new Circle();
+//        doubleBounce.setBounds(0, 0, 100, 100);
+        doubleBounce.setColor(colors[8]);
+        progressBar.setIndeterminateDrawable(doubleBounce);
+        progressBar.setVisibility(View.VISIBLE);
+
+
         tampil_kab();
         tampil_kec();
     }
 
-    private void showLoading(Boolean state) {
-        if (state) {
-            progressBar.setVisibility(View.VISIBLE);
-        } else {
-            progressBar.setVisibility(View.GONE);
-        }
-    }
+//    private void showLoading(Boolean state) {
+//        if (state) {
+//            progressBar.setVisibility(View.VISIBLE);
+//        } else {
+//            progressBar.setVisibility(View.GONE);
+//        }
+//    }
 
 
     private void tampil_kec() {
