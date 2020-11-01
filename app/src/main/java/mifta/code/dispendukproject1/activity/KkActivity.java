@@ -12,6 +12,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.github.ybq.android.spinkit.style.Circle;
+
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -19,12 +21,15 @@ import java.util.List;
 import mifta.code.dispendukproject1.api.API;
 import mifta.code.dispendukproject1.adapter.KkAdapter;
 import mifta.code.dispendukproject1.R;
+import mifta.code.dispendukproject1.api.Colors;
 import mifta.code.dispendukproject1.api.koneksi;
 import mifta.code.dispendukproject1.api.respon;
 import mifta.code.dispendukproject1.api.tampil;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+
+import static mifta.code.dispendukproject1.api.Colors.colors;
 
 public class KkActivity extends AppCompatActivity {
     TextView tanggal, bulan, tahun, hari, total_kab;
