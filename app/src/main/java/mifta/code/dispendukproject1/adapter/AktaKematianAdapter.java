@@ -37,7 +37,7 @@ public class AktaKematianAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         AktaKematianAdapter.MyHolder myHolder = (AktaKematianAdapter.MyHolder) holder;
         tampil result = results.get(position);
-        myHolder.nama_kec.setText("KECAMATAN "+result.getNAMA_KEC());
+        myHolder.nama_kec.setText("KECAMATAN " + result.getNAMA_KEC());
         myHolder.total_kec.setText(result.getJUMLAH());
         myHolder.jenis.setText("Akta Kematian");
         Glide.with(myHolder.itemView.getContext())

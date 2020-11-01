@@ -62,7 +62,7 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.im_kk:
                 Intent a = new Intent(DashboardActivity.this, KkActivity.class);
                 startActivity(a);

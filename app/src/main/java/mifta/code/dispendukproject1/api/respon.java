@@ -12,6 +12,7 @@ public class respon {
     public List<tampil> getResult() {
         return result;
     }
+
     public String getJwt() {
         return jwt;
     }

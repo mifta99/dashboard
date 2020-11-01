@@ -59,7 +59,7 @@ public class ProfilActivity extends AppCompatActivity implements View.OnClickLis
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.bt_logout:
                 logout();
                 break;

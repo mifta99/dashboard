@@ -37,7 +37,7 @@ public class AktaKelahiranAdapter extends RecyclerView.Adapter<RecyclerView.View
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         AktaKelahiranAdapter.MyHolder myHolder = (AktaKelahiranAdapter.MyHolder) holder;
         tampil result = results.get(position);
-        myHolder.nama_kec.setText("KECAMATAN "+result.getNAMA_KEC());
+        myHolder.nama_kec.setText("KECAMATAN " + result.getNAMA_KEC());
         myHolder.total_kec.setText(result.getJUMLAH());
         myHolder.jenis.setText("Akta Kelahiran");
         Glide.with(myHolder.itemView.getContext())
@@ -53,7 +53,7 @@ public class AktaKelahiranAdapter extends RecyclerView.Adapter<RecyclerView.View
     }
 
     class MyHolder extends RecyclerView.ViewHolder {
-        TextView nama_kec, total_kec,jenis;
+        TextView nama_kec, total_kec, jenis;
         ImageView ic;
 
         public MyHolder(View itemView) {
@@ -61,7 +61,7 @@ public class AktaKelahiranAdapter extends RecyclerView.Adapter<RecyclerView.View
             nama_kec = itemView.findViewById(R.id.tvx_kec);
             total_kec = itemView.findViewById(R.id.tvx_totalKec);
             jenis = itemView.findViewById(R.id.tvx_jenis);
-            ic= itemView.findViewById(R.id.imx_icpict);
+            ic = itemView.findViewById(R.id.imx_icpict);
         }
     }
 }

@@ -1,9 +1,5 @@
 package mifta.code.dispendukproject1.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -12,12 +8,15 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
 import mifta.code.dispendukproject1.R;
-import mifta.code.dispendukproject1.adapter.AktaKematianAdapter;
 import mifta.code.dispendukproject1.adapter.AktaPerkawinanAdapter;
 import mifta.code.dispendukproject1.api.API;
 import mifta.code.dispendukproject1.api.koneksi;
@@ -29,10 +28,10 @@ import retrofit2.Response;
 
 public class AktaPerkawinanActivity extends AppCompatActivity {
     TextView tanggal, bulan, tahun, hari, total_kab;
-    private List<tampil> results = new ArrayList<>();
-    private AktaPerkawinanAdapter aktaPerkawinanAdapter;
     RecyclerView recyclerView;
     ProgressBar progressBar;
+    private List<tampil> results = new ArrayList<>();
+    private AktaPerkawinanAdapter aktaPerkawinanAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -127,6 +126,7 @@ public class AktaPerkawinanActivity extends AppCompatActivity {
             }
         });
     }
+
     private void tampil_kab() {
         final SharedPreferences sharedPreferences = getSharedPreferences("myproject", Context.MODE_PRIVATE);
         final String jwt_ = sharedPreferences.getString("jwt", "0");

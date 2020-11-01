@@ -1,10 +1,10 @@
 package mifta.code.dispendukproject1.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import mifta.code.dispendukproject1.R;
 

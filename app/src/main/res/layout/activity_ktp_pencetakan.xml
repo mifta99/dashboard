@@ -12,39 +12,43 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="20dp"
+        app:layout_constraintBottom_toTopOf="@id/rv_kk"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/rv_kk">
+        app:layout_constraintTop_toTopOf="parent">
 
         <TableRow>
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
                 android:layout_marginLeft="15dp"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:orientation="vertical">
+
                 <TextView
                     android:id="@+id/tv_totalKab"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
-                    android:fontFamily="@font/nexabold"
                     android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/nexabold"
                     android:text="-"
                     android:textColor="#897537"
                     android:textSize="65sp" />
+
                 <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/nexabold"
                     android:text="Total Permohonan"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:textColor="#897537"
-                    android:fontFamily="@font/nexabold" />
+                    android:textColor="#897537" />
+
                 <TextView
-                    android:text="KTP Pencetakan"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:textColor="#897537"
-                    android:fontFamily="@font/nexabold" />
+                    android:fontFamily="@font/nexabold"
+                    android:text="KTP Pencetakan"
+                    android:textColor="#897537" />
             </LinearLayout>
 
             <LinearLayout
@@ -52,6 +56,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:orientation="vertical">
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -91,14 +96,15 @@
                         android:text="20"
                         android:textColor="#897537" />
                 </LinearLayout>
+
                 <TextView
                     android:id="@+id/tv_day"
-                    android:text="Selasa"
-                    android:layout_marginTop="2dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:textColor="#897537"
-                    android:fontFamily="@font/nexabold" />
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/nexabold"
+                    android:text="Selasa"
+                    android:textColor="#897537" />
             </LinearLayout>
 
 
@@ -121,12 +127,12 @@
         style="@android:style/Widget.ProgressBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:foregroundGravity="center"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
+        android:foregroundGravity="center"
         android:visibility="visible"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

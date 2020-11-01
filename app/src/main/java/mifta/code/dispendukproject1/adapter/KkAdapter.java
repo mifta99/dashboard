@@ -37,7 +37,7 @@ public class KkAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         MyHolder myHolder = (MyHolder) holder;
         tampil result = results.get(position);
-        myHolder.nama_kec.setText("KECAMATAN "+result.getNAMA_KEC());
+        myHolder.nama_kec.setText("KECAMATAN " + result.getNAMA_KEC());
         myHolder.total_kec.setText(result.getJUMLAH());
         myHolder.jenis.setText("Kartu Keluarga");
         Glide.with(myHolder.itemView.getContext())
@@ -61,7 +61,7 @@ public class KkAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             nama_kec = itemView.findViewById(R.id.tvx_kec);
             total_kec = itemView.findViewById(R.id.tvx_totalKec);
             jenis = itemView.findViewById(R.id.tvx_jenis);
-            ic= itemView.findViewById(R.id.imx_icpict);
+            ic = itemView.findViewById(R.id.imx_icpict);
         }
     }
 }

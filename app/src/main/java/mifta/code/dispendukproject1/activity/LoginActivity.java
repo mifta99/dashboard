@@ -11,8 +11,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import mifta.code.dispendukproject1.api.API;
 import mifta.code.dispendukproject1.R;
+import mifta.code.dispendukproject1.api.API;
 import mifta.code.dispendukproject1.api.koneksi;
 import mifta.code.dispendukproject1.api.respon;
 import retrofit2.Call;
@@ -37,7 +37,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.bt_login:
                 login();
                 break;
@@ -67,7 +67,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         aksi.enqueue(new Callback<respon>() {
             @Override
             public void onResponse(Call<respon> call, retrofit2.Response<respon> response) {
-                if (response.code()==200) {
+                if (response.code() == 200) {
                     SharedPreferences sharedPreferences = getSharedPreferences("myproject", Context.MODE_PRIVATE);
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putBoolean("login2", true);

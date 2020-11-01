@@ -48,7 +48,7 @@ public class AkteActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.bt_kelahiran:
                 Intent a = new Intent(AkteActivity.this, AktaKelahiranActivity.class);
                 startActivity(a);

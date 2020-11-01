@@ -1,8 +1,8 @@
 package mifta.code.dispendukproject1.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import mifta.code.dispendukproject1.R;
 
