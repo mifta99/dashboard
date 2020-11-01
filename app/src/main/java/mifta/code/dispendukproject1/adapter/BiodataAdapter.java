@@ -28,7 +28,7 @@ public class BiodataAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.custom_kk, null);
+        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.custom_layout, null);
         BiodataAdapter.MyHolder holder = new BiodataAdapter.MyHolder(v);
         return holder;
     }

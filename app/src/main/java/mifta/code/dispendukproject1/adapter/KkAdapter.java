@@ -28,7 +28,7 @@ public class KkAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.custom_kk, null);
+        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.custom_layout, null);
         MyHolder holder = new MyHolder(v);
         return holder;
     }

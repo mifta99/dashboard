@@ -4,9 +4,12 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
 
 import java.util.List;
 
@@ -25,7 +28,7 @@ public class AktaKematianAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.custom_akta_kematian, null);
+        View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.custom_layout, null);
         AktaKematianAdapter.MyHolder holder = new AktaKematianAdapter.MyHolder(v);
         return holder;
     }
@@ -36,6 +39,12 @@ public class AktaKematianAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         tampil result = results.get(position);
         myHolder.nama_kec.setText("KECAMATAN "+result.getNAMA_KEC());
         myHolder.total_kec.setText(result.getJUMLAH());
+        myHolder.jenis.setText("Akta Kematian");
+        Glide.with(myHolder.itemView.getContext())
+                .load(R.drawable.ic_akta)
+                .placeholder(R.drawable.ic_loading)
+                .error(R.drawable.ic_loading)
+                .into(myHolder.ic);
     }
 
     @Override
@@ -44,12 +53,15 @@ public class AktaKematianAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     }
 
     class MyHolder extends RecyclerView.ViewHolder {
-        TextView nama_kec, total_kec;
+        TextView nama_kec, total_kec, jenis;
+        ImageView ic;
 
         public MyHolder(View itemView) {
             super(itemView);
             nama_kec = itemView.findViewById(R.id.tvx_kec);
             total_kec = itemView.findViewById(R.id.tvx_totalKec);
+            jenis = itemView.findViewById(R.id.tvx_jenis);
+            ic = itemView.findViewById(R.id.imx_icpict);
         }
     }
 }
