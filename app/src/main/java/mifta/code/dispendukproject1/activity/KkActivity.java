@@ -4,9 +4,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -95,29 +97,24 @@ public class KkActivity extends AppCompatActivity {
         final String jwt_ = sharedPreferences.getString("jwt", "0");
         API api = koneksi.getClient().create(API.class);
 
-        Call<respon> aksi = api.count_kk_kec();
+        Call<respon> aksi = api.count_kk_kec(jwt_);
 
         aksi.enqueue(new Callback<respon>() {
             @Override
             public void onResponse(Call<respon> call, Response<respon> response) {
                 showLoading(true);
-                String kode = response.body().getValue();
+                Log.d("coderespon", String.valueOf(response.code()));
                 results.clear();
-                if (kode.equals("1")) {
+                if (response.code() != 200) {
+                    Toast.makeText(KkActivity.this, "Token tidak valid atau Token expired", Toast.LENGTH_SHORT).show();
+                    logout();
+                } else {
                     showLoading(false);
                     results = response.body().getResult();
                     kkAdapter = new KkAdapter(KkActivity.this, results);
                     kkAdapter.notifyDataSetChanged();
                     tampilKk.setAdapter(kkAdapter);
-//                Log.d("coderespon", String.valueOf(response.code()));
-//                if (response.code() != 200){
-//                   Toast.makeText(KkActivity.this, "Token tidak valid atau Token expired", Toast.LENGTH_SHORT).show();
-//                    logout();
-//                }else {
-//
-//                    }
                 }
-
             }
 
             @Override
@@ -132,25 +129,21 @@ public class KkActivity extends AppCompatActivity {
         final String jwt_ = sharedPreferences.getString("jwt", "0");
         API api = koneksi.getClient().create(API.class);
 
-        Call<respon> aksi = api.count_kk_kab();
+        Call<respon> aksi = api.count_kk_kab(jwt_);
 
         aksi.enqueue(new Callback<respon>() {
             @Override
             public void onResponse(Call<respon> call, Response<respon> response) {
-                String kode = response.body().getValue();
+                Log.d("coderespon", String.valueOf(response.code()));
                 results.clear();
-                if (kode.equals("1")) {
+                if (response.code() != 200) {
+                    Toast.makeText(KkActivity.this, "Token tidak valid atau Token expired", Toast.LENGTH_SHORT).show();
+                    logout();
+                } else {
                     results = response.body().getResult();
                     for (int i = 0; i < results.size(); i++) {
                         total_kab.setText(String.valueOf(results.get(i).TOTAL));
                     }
-//                Log.d("coderespon", String.valueOf(response.code()));
-//                if (response.code() != 200){
-//                   Toast.makeText(KkActivity.this, "Token tidak valid atau Token expired", Toast.LENGTH_SHORT).show();
-//                    logout();
-//                }else {
-//
-//                    }
                 }
 
             }

@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -68,32 +69,35 @@ public class AkteActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    private void logout() {
+        final SharedPreferences sharedPreferences = getSharedPreferences("myproject", Context.MODE_PRIVATE);
+        SharedPreferences.Editor akses = sharedPreferences.edit();
+        akses.clear();
+        akses.commit();
+        startActivity(new Intent(AkteActivity.this, LoginActivity.class));
+        finish();
+    }
+
     private void tampil_kelahiran() {
         final SharedPreferences sharedPreferences = getSharedPreferences("myproject", Context.MODE_PRIVATE);
         final String jwt_ = sharedPreferences.getString("jwt", "0");
         API api = koneksi.getClient().create(API.class);
 
-        Call<respon> aksi = api.count_kelahiran_kab();
+        Call<respon> aksi = api.count_kelahiran_kab(jwt_);
 
         aksi.enqueue(new Callback<respon>() {
             @Override
             public void onResponse(Call<respon> call, Response<respon> response) {
-                String kode = response.body().getValue();
                 results.clear();
-                if (kode.equals("1")) {
+                if (response.code() != 200){
+                    Toast.makeText(AkteActivity.this, "Token tidak valid atau Token expired", Toast.LENGTH_SHORT).show();
+                    logout();
+                }else {
                     results = response.body().getResult();
                     for (int i = 0; i < results.size(); i++) {
                         kelahiran.setText(String.valueOf(results.get(i).TOTAL));
                     }
-//                Log.d("coderespon", String.valueOf(response.code()));
-//                if (response.code() != 200){
-//                   Toast.makeText(KkActivity.this, "Token tidak valid atau Token expired", Toast.LENGTH_SHORT).show();
-//                    logout();
-//                }else {
-//
-//                    }
                 }
-
             }
 
             @Override
@@ -108,27 +112,21 @@ public class AkteActivity extends AppCompatActivity implements View.OnClickListe
         final String jwt_ = sharedPreferences.getString("jwt", "0");
         API api = koneksi.getClient().create(API.class);
 
-        Call<respon> aksi = api.count_kematian_kab();
+        Call<respon> aksi = api.count_kematian_kab(jwt_);
 
         aksi.enqueue(new Callback<respon>() {
             @Override
             public void onResponse(Call<respon> call, Response<respon> response) {
-                String kode = response.body().getValue();
                 results.clear();
-                if (kode.equals("1")) {
+                if (response.code() != 200){
+                    Toast.makeText(AkteActivity.this, "Token tidak valid atau Token expired", Toast.LENGTH_SHORT).show();
+                    logout();
+                }else {
                     results = response.body().getResult();
                     for (int i = 0; i < results.size(); i++) {
                         kematian.setText(String.valueOf(results.get(i).TOTAL));
                     }
-//                Log.d("coderespon", String.valueOf(response.code()));
-//                if (response.code() != 200){
-//                   Toast.makeText(KkActivity.this, "Token tidak valid atau Token expired", Toast.LENGTH_SHORT).show();
-//                    logout();
-//                }else {
-//
-//                    }
                 }
-
             }
 
             @Override
@@ -143,27 +141,21 @@ public class AkteActivity extends AppCompatActivity implements View.OnClickListe
         final String jwt_ = sharedPreferences.getString("jwt", "0");
         API api = koneksi.getClient().create(API.class);
 
-        Call<respon> aksi = api.count_perceraian_kab();
+        Call<respon> aksi = api.count_perceraian_kab(jwt_);
 
         aksi.enqueue(new Callback<respon>() {
             @Override
             public void onResponse(Call<respon> call, Response<respon> response) {
-                String kode = response.body().getValue();
                 results.clear();
-                if (kode.equals("1")) {
+                if (response.code() != 200){
+                    Toast.makeText(AkteActivity.this, "Token tidak valid atau Token expired", Toast.LENGTH_SHORT).show();
+                    logout();
+                }else {
                     results = response.body().getResult();
                     for (int i = 0; i < results.size(); i++) {
                         perceraian.setText(String.valueOf(results.get(i).TOTAL));
                     }
-//                Log.d("coderespon", String.valueOf(response.code()));
-//                if (response.code() != 200){
-//                   Toast.makeText(KkActivity.this, "Token tidak valid atau Token expired", Toast.LENGTH_SHORT).show();
-//                    logout();
-//                }else {
-//
-//                    }
                 }
-
             }
 
             @Override
@@ -178,27 +170,21 @@ public class AkteActivity extends AppCompatActivity implements View.OnClickListe
         final String jwt_ = sharedPreferences.getString("jwt", "0");
         API api = koneksi.getClient().create(API.class);
 
-        Call<respon> aksi = api.count_perkawinan_kab();
+        Call<respon> aksi = api.count_perkawinan_kab(jwt_);
 
         aksi.enqueue(new Callback<respon>() {
             @Override
             public void onResponse(Call<respon> call, Response<respon> response) {
-                String kode = response.body().getValue();
                 results.clear();
-                if (kode.equals("1")) {
+                if (response.code() != 200){
+                    Toast.makeText(AkteActivity.this, "Token tidak valid atau Token expired", Toast.LENGTH_SHORT).show();
+                    logout();
+                }else {
                     results = response.body().getResult();
                     for (int i = 0; i < results.size(); i++) {
                         perkawinan.setText(String.valueOf(results.get(i).TOTAL));
                     }
-//                Log.d("coderespon", String.valueOf(response.code()));
-//                if (response.code() != 200){
-//                   Toast.makeText(KkActivity.this, "Token tidak valid atau Token expired", Toast.LENGTH_SHORT).show();
-//                    logout();
-//                }else {
-//
-//                    }
                 }
-
             }
 
             @Override
