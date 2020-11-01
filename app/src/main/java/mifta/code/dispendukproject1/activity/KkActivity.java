@@ -112,11 +112,13 @@ public class KkActivity extends AppCompatActivity {
         aksi.enqueue(new Callback<respon>() {
             @Override
             public void onResponse(Call<respon> call, Response<respon> response) {
-                showLoading(true);
+//                showLoading(true);
+                progressBar.setVisibility(View.VISIBLE);
                 String kode = response.body().getValue();
                 results.clear();
                 if (kode.equals("1")) {
-                    showLoading(false);
+//                    showLoading(false);
+                    progressBar.setVisibility(View.GONE);
                     results = response.body().getResult();
                     kkAdapter = new KkAdapter(KkActivity.this, results);
                     kkAdapter.notifyDataSetChanged();
