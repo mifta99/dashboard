@@ -83,6 +83,11 @@ public class BiodataActivity extends AppCompatActivity {
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(llm);
 
+        Circle circle = new Circle();
+        circle.setColor(colors[8]);
+        progressBar.setIndeterminateDrawable(circle);
+
+
         tampil_kab();
         tampil_kec();
     }
