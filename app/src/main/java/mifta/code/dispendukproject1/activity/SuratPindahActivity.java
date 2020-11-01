@@ -12,6 +12,8 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.github.ybq.android.spinkit.style.Circle;
+
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -26,6 +28,8 @@ import mifta.code.dispendukproject1.api.tampil;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+
+import static mifta.code.dispendukproject1.api.Colors.colors;
 
 public class SuratPindahActivity extends AppCompatActivity {
     TextView tanggal, bulan, tahun, hari, total_kab;
@@ -77,6 +81,11 @@ public class SuratPindahActivity extends AppCompatActivity {
         LinearLayoutManager llm = new LinearLayoutManager(this);
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(llm);
+
+
+        Circle circle = new Circle();
+        circle.setColor(colors[8]);
+        progressBar.setIndeterminateDrawable(circle);
 
         tampil_kab();
         tampil_kec();
