@@ -89,10 +89,10 @@ public class AkteActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onResponse(Call<respon> call, Response<respon> response) {
                 results.clear();
-                if (response.code() != 200){
+                if (response.code() != 200) {
                     Toast.makeText(AkteActivity.this, "Token tidak valid atau Token expired", Toast.LENGTH_SHORT).show();
                     logout();
-                }else {
+                } else {
                     results = response.body().getResult();
                     for (int i = 0; i < results.size(); i++) {
                         kelahiran.setText(String.valueOf(results.get(i).TOTAL));
@@ -118,10 +118,10 @@ public class AkteActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onResponse(Call<respon> call, Response<respon> response) {
                 results.clear();
-                if (response.code() != 200){
+                if (response.code() != 200) {
                     Toast.makeText(AkteActivity.this, "Token tidak valid atau Token expired", Toast.LENGTH_SHORT).show();
                     logout();
-                }else {
+                } else {
                     results = response.body().getResult();
                     for (int i = 0; i < results.size(); i++) {
                         kematian.setText(String.valueOf(results.get(i).TOTAL));
@@ -147,10 +147,10 @@ public class AkteActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onResponse(Call<respon> call, Response<respon> response) {
                 results.clear();
-                if (response.code() != 200){
+                if (response.code() != 200) {
                     Toast.makeText(AkteActivity.this, "Token tidak valid atau Token expired", Toast.LENGTH_SHORT).show();
                     logout();
-                }else {
+                } else {
                     results = response.body().getResult();
                     for (int i = 0; i < results.size(); i++) {
                         perceraian.setText(String.valueOf(results.get(i).TOTAL));
@@ -176,10 +176,10 @@ public class AkteActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onResponse(Call<respon> call, Response<respon> response) {
                 results.clear();
-                if (response.code() != 200){
+                if (response.code() != 200) {
                     Toast.makeText(AkteActivity.this, "Token tidak valid atau Token expired", Toast.LENGTH_SHORT).show();
                     logout();
-                }else {
+                } else {
                     results = response.body().getResult();
                     for (int i = 0; i < results.size(); i++) {
                         perkawinan.setText(String.valueOf(results.get(i).TOTAL));

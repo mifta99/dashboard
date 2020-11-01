@@ -105,10 +105,10 @@ public class KtpPerekamanActivity extends AppCompatActivity {
                 showLoading(true);
                 Log.d("coderespon", String.valueOf(response.code()));
                 results.clear();
-                if (response.code() != 200){
+                if (response.code() != 200) {
                     Toast.makeText(KtpPerekamanActivity.this, "Token tidak valid atau Token expired", Toast.LENGTH_SHORT).show();
                     logout();
-                }else {
+                } else {
                     showLoading(false);
                     results = response.body().getResult();
                     ktpPerekamanAdapter = new KtpPerekamanAdapter(KtpPerekamanActivity.this, results);
@@ -116,6 +116,7 @@ public class KtpPerekamanActivity extends AppCompatActivity {
                     recyclerView.setAdapter(ktpPerekamanAdapter);
                 }
             }
+
             @Override
             public void onFailure(Call<respon> call, Throwable t) {
 
@@ -134,10 +135,10 @@ public class KtpPerekamanActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<respon> call, Response<respon> response) {
                 results.clear();
-                if (response.code() != 200){
-                   Toast.makeText(KtpPerekamanActivity.this, "Token tidak valid atau Token expired", Toast.LENGTH_SHORT).show();
-                   logout();
-                }else {
+                if (response.code() != 200) {
+                    Toast.makeText(KtpPerekamanActivity.this, "Token tidak valid atau Token expired", Toast.LENGTH_SHORT).show();
+                    logout();
+                } else {
                     results = response.body().getResult();
                     for (int i = 0; i < results.size(); i++) {
                         total_kab.setText(String.valueOf(results.get(i).TOTAL));
