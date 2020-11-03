@@ -20,7 +20,7 @@ import java.util.List;
 import mifta.code.dispendukproject1.R;
 
 public class DashboardActivity extends AppCompatActivity implements View.OnClickListener {
-    TextView txtUser;
+    TextView txtUser, txt_ktp, txt_kk, txt_akta, txt_pindah, txt_datang, txt_biodata;
     ImageView foto, kk, ktp, akta, datang, pindah, biodata;
     private Menu action;
 
@@ -43,9 +43,32 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
         pindah = findViewById(R.id.im_pindah);
         biodata = findViewById(R.id.im_biodata);
         txtUser = findViewById(R.id.tv_user);
+        txt_ktp = findViewById(R.id.txt_ktp);
+        txt_kk = findViewById(R.id.txt_kk);
+        txt_akta = findViewById(R.id.txt_akta);
+        txt_pindah = findViewById(R.id.txt_pindah);
+        txt_datang = findViewById(R.id.txt_datang);
+        txt_biodata = findViewById(R.id.txt_biodata);
 
         final String nama_ = aud.get(2);
+        final String status_ = aud.get(1);
         final String foto_ = aud.get(4);
+
+        if (status_.equals("dafduk")){
+            akta.setVisibility(View.GONE);
+            txt_akta.setVisibility(View.GONE);
+        }else if (status_.equals("capil")){
+            kk.setVisibility(View.GONE);
+            txt_kk.setVisibility(View.GONE);
+            ktp.setVisibility(View.GONE);
+            txt_ktp.setVisibility(View.GONE);
+            biodata.setVisibility(View.GONE);
+            txt_biodata.setVisibility(View.GONE);
+            pindah.setVisibility(View.GONE);
+            txt_pindah.setVisibility(View.GONE);
+            datang.setVisibility(View.GONE);
+            txt_datang.setVisibility(View.GONE);
+        }
 
         txtUser.setText("HALO " + nama_);
         Glide.with(DashboardActivity.this)

@@ -2,7 +2,7 @@ package mifta.code.dispendukproject1.api;
 
 public class tampil {
     public String JUMLAH;
-    public String NO_KEC;
+    public int NO_KEC;
     public String NAMA_KEC;
     public String TOTAL;
 
@@ -18,7 +18,7 @@ public class tampil {
         return JUMLAH;
     }
 
-    public String getNO_KEC() {
+    public int getNO_KEC() {
         return NO_KEC;
     }
 }

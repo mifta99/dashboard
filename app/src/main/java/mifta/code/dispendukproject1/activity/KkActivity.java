@@ -112,6 +112,7 @@ public class KkActivity extends AppCompatActivity {
                     showLoading(false);
                     results = response.body().getResult();
                     kkAdapter = new KkAdapter(KkActivity.this, results);
+                    tampilKk.getRecycledViewPool().clear();
                     kkAdapter.notifyDataSetChanged();
                     tampilKk.setAdapter(kkAdapter);
                 }

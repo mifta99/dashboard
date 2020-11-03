@@ -23,9 +23,18 @@ public class KkAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     public KkAdapter(Context context, List<tampil> results) {
         this.context = context;
         this.results = results;
-
     }
 
+    KkAdapter(){
+        setHasStableIds(true);
+    }
+
+    @Override
+    public long getItemId(int position) {
+        // requires static value, it means need to keep the same value
+        // even if the item position has been changed.
+        return results.get(position).getNO_KEC();
+    }
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.custom_layout, null);
