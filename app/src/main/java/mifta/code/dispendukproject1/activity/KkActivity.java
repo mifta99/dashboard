@@ -20,11 +20,9 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-import mifta.code.dispendukproject1.adapter.AktaKematianAdapter;
-import mifta.code.dispendukproject1.api.API;
-import mifta.code.dispendukproject1.adapter.KkAdapter;
 import mifta.code.dispendukproject1.R;
-import mifta.code.dispendukproject1.api.Colors;
+import mifta.code.dispendukproject1.adapter.KkAdapter;
+import mifta.code.dispendukproject1.api.API;
 import mifta.code.dispendukproject1.api.koneksi;
 import mifta.code.dispendukproject1.api.respon;
 import mifta.code.dispendukproject1.api.tampil;
@@ -36,10 +34,10 @@ import static mifta.code.dispendukproject1.api.Colors.colors;
 
 public class KkActivity extends AppCompatActivity {
     TextView tanggal, bulan, tahun, hari, total_kab;
-    private List<tampil> results = new ArrayList<>();
-    private KkAdapter kkAdapter;
     RecyclerView tampilKk;
     ProgressBar progressBar;
+    private List<tampil> results = new ArrayList<>();
+    private KkAdapter kkAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -138,6 +136,7 @@ public class KkActivity extends AppCompatActivity {
             }
         });
     }
+
     private void tampil_kab() {
         final SharedPreferences sharedPreferences = getSharedPreferences("myproject", Context.MODE_PRIVATE);
         final String jwt_ = sharedPreferences.getString("jwt", "0");
@@ -167,6 +166,7 @@ public class KkActivity extends AppCompatActivity {
             }
         });
     }
+
     private void logout() {
         final SharedPreferences sharedPreferences = getSharedPreferences("myproject", Context.MODE_PRIVATE);
         SharedPreferences.Editor akses = sharedPreferences.edit();

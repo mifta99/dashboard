@@ -23,7 +23,7 @@ import mifta.code.dispendukproject1.R;
 public class DashboardActivity extends AppCompatActivity implements View.OnClickListener {
     TextView txtUser, txt_ktp, txt_kk, txt_akta, txt_pindah, txt_datang, txt_biodata;
     ImageView foto, kk, ktp, akta, datang, pindah, biodata, kelahiran, kematian, perkawinan, perceraian;
-    TableRow tbl1, tbl2,tbl3, tbl4, tbl5, tbl6, tbl7, tbl8;
+    TableRow tbl1, tbl2, tbl3, tbl4, tbl5, tbl6, tbl7, tbl8;
     private Menu action;
 
     @Override
@@ -69,10 +69,10 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
         final String status_ = aud.get(1);
         final String foto_ = aud.get(4);
 
-        if (status_.equals("dafduk")){
+        if (status_.equals("dafduk")) {
             akta.setVisibility(View.INVISIBLE);
             txt_akta.setVisibility(View.INVISIBLE);
-        }else if (status_.equals("capil")){
+        } else if (status_.equals("capil")) {
             tbl1.setVisibility(View.GONE);
             tbl2.setVisibility(View.GONE);
             tbl3.setVisibility(View.GONE);

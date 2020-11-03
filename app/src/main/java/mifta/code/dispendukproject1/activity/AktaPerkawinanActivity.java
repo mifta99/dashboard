@@ -89,7 +89,6 @@ public class AktaPerkawinanActivity extends AppCompatActivity {
         progressBar.setIndeterminateDrawable(circle);
 
 
-
         tampil_kab();
         tampil_kec();
     }
