@@ -4,23 +4,24 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.github.ybq.android.spinkit.style.Circle;
+
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-import mifta.code.dispendukproject1.R;
-import mifta.code.dispendukproject1.adapter.KkAdapter;
 import mifta.code.dispendukproject1.api.API;
+import mifta.code.dispendukproject1.adapter.KkAdapter;
+import mifta.code.dispendukproject1.R;
+import mifta.code.dispendukproject1.api.Colors;
 import mifta.code.dispendukproject1.api.koneksi;
 import mifta.code.dispendukproject1.api.respon;
 import mifta.code.dispendukproject1.api.tampil;
@@ -28,12 +29,14 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import static mifta.code.dispendukproject1.api.Colors.colors;
+
 public class KkActivity extends AppCompatActivity {
     TextView tanggal, bulan, tahun, hari, total_kab;
-    RecyclerView tampilKk;
-    ProgressBar progressBar;
     private List<tampil> results = new ArrayList<>();
     private KkAdapter kkAdapter;
+    RecyclerView tampilKk;
+    ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,17 +82,24 @@ public class KkActivity extends AppCompatActivity {
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         tampilKk.setLayoutManager(llm);
 
+        Circle doubleBounce = new Circle();
+//        doubleBounce.setBounds(0, 0, 100, 100);
+        doubleBounce.setColor(colors[8]);
+        progressBar.setIndeterminateDrawable(doubleBounce);
+        progressBar.setVisibility(View.VISIBLE);
+
+
         tampil_kab();
         tampil_kec();
     }
 
-    private void showLoading(Boolean state) {
-        if (state) {
-            progressBar.setVisibility(View.VISIBLE);
-        } else {
-            progressBar.setVisibility(View.GONE);
-        }
-    }
+//    private void showLoading(Boolean state) {
+//        if (state) {
+//            progressBar.setVisibility(View.VISIBLE);
+//        } else {
+//            progressBar.setVisibility(View.GONE);
+//        }
+//    }
 
 
     private void tampil_kec() {
@@ -97,25 +107,31 @@ public class KkActivity extends AppCompatActivity {
         final String jwt_ = sharedPreferences.getString("jwt", "0");
         API api = koneksi.getClient().create(API.class);
 
-        Call<respon> aksi = api.count_kk_kec(jwt_);
+        Call<respon> aksi = api.count_kk_kec();
 
         aksi.enqueue(new Callback<respon>() {
             @Override
             public void onResponse(Call<respon> call, Response<respon> response) {
-                showLoading(true);
-                Log.d("coderespon", String.valueOf(response.code()));
+//                showLoading(true);
+                progressBar.setVisibility(View.VISIBLE);
+                String kode = response.body().getValue();
                 results.clear();
-                if (response.code() != 200) {
-                    Toast.makeText(KkActivity.this, "Token tidak valid atau Token expired", Toast.LENGTH_SHORT).show();
-                    logout();
-                } else {
-                    showLoading(false);
+                if (kode.equals("1")) {
+//                    showLoading(false);
+                    progressBar.setVisibility(View.GONE);
                     results = response.body().getResult();
                     kkAdapter = new KkAdapter(KkActivity.this, results);
-                    tampilKk.getRecycledViewPool().clear();
                     kkAdapter.notifyDataSetChanged();
                     tampilKk.setAdapter(kkAdapter);
+//                Log.d("coderespon", String.valueOf(response.code()));
+//                if (response.code() != 200){
+//                   Toast.makeText(KkActivity.this, "Token tidak valid atau Token expired", Toast.LENGTH_SHORT).show();
+//                    logout();
+//                }else {
+//
+//                    }
                 }
+
             }
 
             @Override
@@ -124,27 +140,30 @@ public class KkActivity extends AppCompatActivity {
             }
         });
     }
-
     private void tampil_kab() {
         final SharedPreferences sharedPreferences = getSharedPreferences("myproject", Context.MODE_PRIVATE);
         final String jwt_ = sharedPreferences.getString("jwt", "0");
         API api = koneksi.getClient().create(API.class);
 
-        Call<respon> aksi = api.count_kk_kab(jwt_);
+        Call<respon> aksi = api.count_kk_kab();
 
         aksi.enqueue(new Callback<respon>() {
             @Override
             public void onResponse(Call<respon> call, Response<respon> response) {
-                Log.d("coderespon", String.valueOf(response.code()));
+                String kode = response.body().getValue();
                 results.clear();
-                if (response.code() != 200) {
-                    Toast.makeText(KkActivity.this, "Token tidak valid atau Token expired", Toast.LENGTH_SHORT).show();
-                    logout();
-                } else {
+                if (kode.equals("1")) {
                     results = response.body().getResult();
                     for (int i = 0; i < results.size(); i++) {
                         total_kab.setText(String.valueOf(results.get(i).TOTAL));
                     }
+//                Log.d("coderespon", String.valueOf(response.code()));
+//                if (response.code() != 200){
+//                   Toast.makeText(KkActivity.this, "Token tidak valid atau Token expired", Toast.LENGTH_SHORT).show();
+//                    logout();
+//                }else {
+//
+//                    }
                 }
 
             }
@@ -155,7 +174,6 @@ public class KkActivity extends AppCompatActivity {
             }
         });
     }
-
     private void logout() {
         final SharedPreferences sharedPreferences = getSharedPreferences("myproject", Context.MODE_PRIVATE);
         SharedPreferences.Editor akses = sharedPreferences.edit();
