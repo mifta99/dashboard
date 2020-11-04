@@ -121,7 +121,6 @@ public class AktaPerceraianActivity extends AppCompatActivity {
                     showLoading(false);
                     results = response.body().getResult();
                     aktaPerceraianAdapter = new AktaPerceraianAdapter(AktaPerceraianActivity.this, results);
-                    recyclerView.getRecycledViewPool().clear();
                     aktaPerceraianAdapter.notifyDataSetChanged();
                     recyclerView.setAdapter(aktaPerceraianAdapter);
                 }

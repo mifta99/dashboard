@@ -121,7 +121,6 @@ public class AktaKematianActivity extends AppCompatActivity {
                     showLoading(false);
                     results = response.body().getResult();
                     aktaKematianAdapter = new AktaKematianAdapter(AktaKematianActivity.this, results);
-                    recyclerView.getRecycledViewPool().clear();
                     aktaKematianAdapter.notifyDataSetChanged();
                     recyclerView.setAdapter(aktaKematianAdapter);
                 }

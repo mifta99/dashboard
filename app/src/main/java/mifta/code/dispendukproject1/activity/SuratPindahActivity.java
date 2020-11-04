@@ -121,7 +121,6 @@ public class SuratPindahActivity extends AppCompatActivity {
                     showLoading(false);
                     results = response.body().getResult();
                     suratPindahAdapter = new SuratPindahAdapter(SuratPindahActivity.this, results);
-                    recyclerView.getRecycledViewPool().clear();
                     suratPindahAdapter.notifyDataSetChanged();
                     recyclerView.setAdapter(suratPindahAdapter);
                 }

@@ -120,7 +120,6 @@ public class AktaKelahiranActivity extends AppCompatActivity {
                     showLoading(false);
                     results = response.body().getResult();
                     aktaKelahiranAdapter = new AktaKelahiranAdapter(AktaKelahiranActivity.this, results);
-                    recyclerView.getRecycledViewPool().clear();
                     aktaKelahiranAdapter.notifyDataSetChanged();
                     recyclerView.setAdapter(aktaKelahiranAdapter);
                 }
