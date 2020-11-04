@@ -31,6 +31,7 @@
             <TableRow>
 
                 <ImageView
+                    android:layout_gravity="center"
                     android:id="@+id/imx_icpict"
                     android:layout_width="60dp"
                     android:layout_height="90dp"
@@ -80,7 +81,7 @@
                     android:padding="@dimen/margin_standart"
                     android:text="50"
                     android:textColor="@color/white"
-                    android:textSize="40sp"
+                    android:textSize="35sp"
                     app:srcCompat="@drawable/ic_ktp" />
             </TableRow>
         </TableLayout>
