@@ -41,7 +41,7 @@ public class AktaKematianAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         myHolder.total_kec.setText(result.getJUMLAH());
         myHolder.jenis.setText("Akta Kematian");
         Glide.with(myHolder.itemView.getContext())
-                .load(R.drawable.ic_akta)
+                .load(R.drawable.ic_kematian)
                 .placeholder(R.drawable.ic_loading)
                 .error(R.drawable.ic_loading)
                 .into(myHolder.ic);

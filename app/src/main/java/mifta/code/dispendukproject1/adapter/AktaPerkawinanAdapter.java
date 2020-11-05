@@ -41,7 +41,7 @@ public class AktaPerkawinanAdapter extends RecyclerView.Adapter<RecyclerView.Vie
         myHolder.total_kec.setText(result.getJUMLAH());
         myHolder.jenis.setText("Akta Perkawinan");
         Glide.with(myHolder.itemView.getContext())
-                .load(R.drawable.ic_akta)
+                .load(R.drawable.ic_perkawinan)
                 .placeholder(R.drawable.ic_loading)
                 .error(R.drawable.ic_loading)
                 .into(myHolder.ic);
