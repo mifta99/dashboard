@@ -109,7 +109,7 @@ public class DashboardActivity extends AppCompatActivity implements View.OnClick
                 startActivity(a);
                 break;
             case R.id.im_ktp:
-                Intent b = new Intent(DashboardActivity.this, KtpPerekamanActivity.class);
+                Intent b = new Intent(DashboardActivity.this, KtpActivity.class);
                 startActivity(b);
                 break;
             case R.id.im_akta:

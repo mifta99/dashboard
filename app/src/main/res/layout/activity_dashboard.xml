@@ -121,7 +121,7 @@
                             android:fontFamily="@font/nexabold"
                             android:foreground="?android:attr/selectableItemBackground"
                             android:gravity="center_horizontal"
-                            android:text="KTP-Elektronik"
+                            android:text="KTP"
                             android:visibility="visible" />
 
                         <TextView

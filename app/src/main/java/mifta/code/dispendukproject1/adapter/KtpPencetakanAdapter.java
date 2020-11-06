@@ -35,7 +35,7 @@ public class KtpPencetakanAdapter extends RecyclerView.Adapter<RecyclerView.View
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        KtpPerekamanAdapter.MyHolder myHolder = (KtpPerekamanAdapter.MyHolder) holder;
+        KtpPencetakanAdapter.MyHolder myHolder = (KtpPencetakanAdapter.MyHolder) holder;
         tampil result = results.get(position);
         myHolder.nama_kec.setText("KECAMATAN " + result.getNAMA_KEC());
         myHolder.total_kec.setText(result.getJUMLAH());

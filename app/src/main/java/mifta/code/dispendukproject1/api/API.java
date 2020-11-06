@@ -22,9 +22,14 @@ public interface API {
     @GET("count_ktp_perekaman_kab.php")
     Call<respon> count_ktp_perekaman_kab(@Header("Authorization") String Authorization);
 
-
     @GET("count_ktp_perekaman_kec.php")
     Call<respon> count_ktp_perekaman_kec(@Header("Authorization") String Authorization);
+
+    @GET("count_ktp_pencetakan_kab.php")
+    Call<respon> count_ktp_pencetakan_kab(@Header("Authorization") String Authorization);
+
+    @GET("count_ktp_pencetakan_kec.php")
+    Call<respon> count_ktp_pencetakan_kec(@Header("Authorization") String Authorization);
 
     @GET("count_perpindahan_kab.php")
     Call<respon> count_perpindahan_kab(@Header("Authorization") String Authorization);
