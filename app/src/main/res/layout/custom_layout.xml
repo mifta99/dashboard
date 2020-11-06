@@ -55,6 +55,7 @@
                         android:textColor="@color/black" />
 
                     <TextView
+                        android:id="@+id/tvx_jenis2"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginTop="8dp"

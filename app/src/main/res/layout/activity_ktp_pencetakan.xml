@@ -39,14 +39,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/nexabold"
-                    android:text="Total Permohonan"
+                    android:text="Total Pencetakan"
                     android:textColor="#897537" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/nexabold"
-                    android:text="KTP Pencetakan"
+                    android:text="KTP Elektronik"
                     android:textColor="#897537" />
             </LinearLayout>
 

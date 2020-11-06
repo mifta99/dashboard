@@ -39,7 +39,8 @@ public class KtpPerekamanAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         tampil result = results.get(position);
         myHolder.nama_kec.setText("KECAMATAN " + result.getNAMA_KEC());
         myHolder.total_kec.setText(result.getJUMLAH());
-        myHolder.jenis.setText("KTP Perekaman");
+        myHolder.jenis2.setText("Jumlah Perekaman");
+        myHolder.jenis.setText("KTP Elektronik");
         Glide.with(myHolder.itemView.getContext())
                 .load(R.drawable.ic_ktp)
                 .placeholder(R.drawable.ic_loading)
@@ -53,7 +54,7 @@ public class KtpPerekamanAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     }
 
     class MyHolder extends RecyclerView.ViewHolder {
-        TextView nama_kec, total_kec, jenis;
+        TextView nama_kec, total_kec, jenis, jenis2;
         ImageView ic;
 
         public MyHolder(View itemView) {
@@ -62,6 +63,7 @@ public class KtpPerekamanAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
             total_kec = itemView.findViewById(R.id.tvx_totalKec);
             jenis = itemView.findViewById(R.id.tvx_jenis);
             ic = itemView.findViewById(R.id.imx_icpict);
+            jenis2 = itemView.findViewById(R.id.tvx_jenis2);
         }
     }
 }
