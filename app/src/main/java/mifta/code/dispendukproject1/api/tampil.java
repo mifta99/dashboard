@@ -21,4 +21,20 @@ public class tampil {
     public int getNO_KEC() {
         return NO_KEC;
     }
+
+    public void setJUMLAH(String JUMLAH) {
+        this.JUMLAH = JUMLAH;
+    }
+
+    public void setNO_KEC(int NO_KEC) {
+        this.NO_KEC = NO_KEC;
+    }
+
+    public void setNAMA_KEC(String NAMA_KEC) {
+        this.NAMA_KEC = NAMA_KEC;
+    }
+
+    public void setTOTAL(String TOTAL) {
+        this.TOTAL = TOTAL;
+    }
 }

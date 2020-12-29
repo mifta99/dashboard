@@ -23,7 +23,17 @@ public class KtpPencetakanAdapter extends RecyclerView.Adapter<RecyclerView.View
     public KtpPencetakanAdapter(Context context, List<tampil> results) {
         this.context = context;
         this.results = results;
+        setHasStableIds(true);
+    }
 
+    @Override
+    public long getItemId(int position) {
+        return results.get(position).getNO_KEC();
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        return position;
     }
 
     @Override

@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_app"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:usesCleartextTraffic="true">
+        android:usesCleartextTraffic="true"
+        android:largeHeap="true">
         <activity
             android:name=".activity.KtpPencetakanActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>

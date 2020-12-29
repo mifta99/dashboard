@@ -1,6 +1,7 @@
 package mifta.code.dispendukproject1.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,7 +24,17 @@ public class AktaKelahiranAdapter extends RecyclerView.Adapter<RecyclerView.View
     public AktaKelahiranAdapter(Context context, List<tampil> results) {
         this.context = context;
         this.results = results;
+        setHasStableIds(true);
+    }
 
+    @Override
+    public long getItemId(int position) {
+        return results.get(position).getNO_KEC();
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        return position;
     }
 
     @Override

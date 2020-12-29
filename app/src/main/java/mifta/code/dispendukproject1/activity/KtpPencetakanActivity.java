@@ -121,6 +121,7 @@ public class KtpPencetakanActivity extends AppCompatActivity {
                     showLoading(false);
                     results = response.body().getResult();
                     ktpPencetakanAdapter = new KtpPencetakanAdapter(KtpPencetakanActivity.this, results);
+                    recyclerView.getRecycledViewPool().clear();
                     ktpPencetakanAdapter.notifyDataSetChanged();
                     recyclerView.setAdapter(ktpPencetakanAdapter);
                 }

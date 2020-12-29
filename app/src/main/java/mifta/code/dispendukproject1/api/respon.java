@@ -1,5 +1,6 @@
 package mifta.code.dispendukproject1.api;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class respon {
@@ -7,10 +8,14 @@ public class respon {
     String message;
     String jwt;
 
-    List<tampil> result;
+    ArrayList<tampil> result;
 
-    public List<tampil> getResult() {
+    public ArrayList<tampil> getResult() {
         return result;
+    }
+
+    public void setResult(ArrayList<tampil> result) {
+        this.result = result;
     }
 
     public String getJwt() {

@@ -120,6 +120,7 @@ public class KtpPerekamanActivity extends AppCompatActivity {
                     showLoading(false);
                     results = response.body().getResult();
                     ktpPerekamanAdapter = new KtpPerekamanAdapter(KtpPerekamanActivity.this, results);
+                    recyclerView.getRecycledViewPool().clear();
                     ktpPerekamanAdapter.notifyDataSetChanged();
                     recyclerView.setAdapter(ktpPerekamanAdapter);
                 }

@@ -122,6 +122,7 @@ public class AktaPerkawinanActivity extends AppCompatActivity {
                     showLoading(false);
                     results = response.body().getResult();
                     aktaPerkawinanAdapter = new AktaPerkawinanAdapter(AktaPerkawinanActivity.this, results);
+                    recyclerView.getRecycledViewPool().clear();
                     aktaPerkawinanAdapter.notifyDataSetChanged();
                     recyclerView.setAdapter(aktaPerkawinanAdapter);
                 }

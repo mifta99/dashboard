@@ -121,6 +121,7 @@ public class BiodataActivity extends AppCompatActivity {
                     showLoading(false);
                     results = response.body().getResult();
                     biodataAdapter = new BiodataAdapter(BiodataActivity.this, results);
+                    recyclerView.getRecycledViewPool().clear();
                     biodataAdapter.notifyDataSetChanged();
                     recyclerView.setAdapter(biodataAdapter);
                 }

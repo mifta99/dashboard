@@ -23,8 +23,19 @@ public class BiodataAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     public BiodataAdapter(Context context, List<tampil> results) {
         this.context = context;
         this.results = results;
-
+        setHasStableIds(true);
     }
+
+    @Override
+    public long getItemId(int position) {
+        return results.get(position).getNO_KEC();
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        return position;
+    }
+
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
