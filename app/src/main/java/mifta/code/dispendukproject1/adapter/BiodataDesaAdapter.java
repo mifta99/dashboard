@@ -49,7 +49,7 @@ public class BiodataDesaAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         BiodataDesaAdapter.MyHolder myHolder = (BiodataDesaAdapter.MyHolder) holder;
         tampil result = results.get(position);
-        myHolder.nama_kec.setText("Desa " + result.getNAMA_KEL());
+        myHolder.nama_kec.setText("DESA " + result.getNAMA_KEL());
         myHolder.total_kec.setText(result.getJUMLAH());
         myHolder.jenis.setText("Biodata");
         Glide.with(myHolder.itemView.getContext())

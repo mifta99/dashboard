@@ -43,6 +43,7 @@
                     android:textColor="#897537" />
 
                 <TextView
+                    android:id="@+id/tv_nama"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/nexabold"
