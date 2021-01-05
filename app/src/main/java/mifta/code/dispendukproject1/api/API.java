@@ -69,4 +69,8 @@ public interface API {
 
     @GET("biodata_1jat.php")
     Call<respon> biodata_1jat(@Header("Authorization") String Authorization);
+
+    @GET("biodata_2bes.php")
+    Call<respon> biodata_2bes(@Header("Authorization") String Authorization);
+
 }
