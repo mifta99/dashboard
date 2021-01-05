@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".bio_1jat"></activity>
+        <activity android:name=".BiodataDesaActivity"></activity>
         <activity
             android:name=".activity.KtpPencetakanActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />

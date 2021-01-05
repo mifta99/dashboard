@@ -5,6 +5,16 @@ public class tampil {
     public int NO_KEC;
     public String NAMA_KEC;
     public String TOTAL;
+    public int NO_KEL;
+    public String NAMA_KEL;
+
+    public int getNO_KEL() {
+        return NO_KEL;
+    }
+
+    public String getNAMA_KEL() {
+        return NAMA_KEL;
+    }
 
     public String getNAMA_KEC() {
         return NAMA_KEC;

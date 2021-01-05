@@ -1,7 +1,6 @@
 package mifta.code.dispendukproject1.adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,13 +16,12 @@ import java.util.List;
 
 import mifta.code.dispendukproject1.R;
 import mifta.code.dispendukproject1.api.tampil;
-import mifta.code.dispendukproject1.BiodataDesaActivity;
 
-public class BiodataAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class BiodataDesaAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private Context context;
     private List<tampil> results;
 
-    public BiodataAdapter(Context context, List<tampil> results) {
+    public BiodataDesaAdapter(Context context, List<tampil> results) {
         this.context = context;
         this.results = results;
         setHasStableIds(true);
@@ -31,7 +29,7 @@ public class BiodataAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
     @Override
     public long getItemId(int position) {
-        return results.get(position).getNO_KEC();
+        return results.get(position).getNO_KEL();
     }
 
     @Override
@@ -43,15 +41,15 @@ public class BiodataAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.custom_layout, null);
-        BiodataAdapter.MyHolder holder = new BiodataAdapter.MyHolder(v);
+        BiodataDesaAdapter.MyHolder holder = new BiodataDesaAdapter.MyHolder(v);
         return holder;
     }
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        BiodataAdapter.MyHolder myHolder = (BiodataAdapter.MyHolder) holder;
+        BiodataDesaAdapter.MyHolder myHolder = (BiodataDesaAdapter.MyHolder) holder;
         tampil result = results.get(position);
-        myHolder.nama_kec.setText("KECAMATAN " + result.getNAMA_KEC());
+        myHolder.nama_kec.setText("Desa " + result.getNAMA_KEL());
         myHolder.total_kec.setText(result.getJUMLAH());
         myHolder.jenis.setText("Biodata");
         Glide.with(myHolder.itemView.getContext())
@@ -59,20 +57,6 @@ public class BiodataAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                 .placeholder(R.drawable.ic_loading)
                 .error(R.drawable.ic_loading)
                 .into(myHolder.ic);
-        myHolder.crd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), BiodataDesaActivity.class);
-                Integer no_kec = Integer.valueOf(result.getNO_KEC());
-                String nama_kec = String.valueOf(result.getNAMA_KEC());
-                String tot_kec = String.valueOf(result.getJUMLAH());
-                intent.putExtra("no_kec", no_kec);
-                intent.putExtra("nama_kec", nama_kec);
-                intent.putExtra("tot_kec", tot_kec);
-                context.startActivity(intent);
-            }
-        });
-
     }
 
     @Override

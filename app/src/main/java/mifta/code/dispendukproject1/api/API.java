@@ -66,4 +66,7 @@ public interface API {
 
     @GET("count_perkawinan_kec.php")
     Call<respon> count_perkawinan_kec(@Header("Authorization") String Authorization);
+
+    @GET("biodata_1jat.php")
+    Call<respon> biodata_1jat(@Header("Authorization") String Authorization);
 }
