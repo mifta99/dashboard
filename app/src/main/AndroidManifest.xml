@@ -8,14 +8,15 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_app"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:roundIcon="@mipmap/ic_app"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:usesCleartextTraffic="true"
-        android:largeHeap="true">
+        android:usesCleartextTraffic="true">
+        <activity android:name=".bio_1jat"></activity>
         <activity
             android:name=".activity.KtpPencetakanActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".activity.KtpPerekamanActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
