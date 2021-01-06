@@ -53,7 +53,7 @@ public class KelahiranDesaAdapter extends RecyclerView.Adapter<RecyclerView.View
         myHolder.total_kec.setText(result.getJUMLAH());
         myHolder.jenis.setText("Akta Kelahiran");
         Glide.with(myHolder.itemView.getContext())
-                .load(R.drawable.ic_biodata)
+                .load(R.drawable.ic_kelahiran)
                 .placeholder(R.drawable.ic_loading)
                 .error(R.drawable.ic_loading)
                 .into(myHolder.ic);
