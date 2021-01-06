@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F4F4F4"
-    tools:context=".BiodataDesaActivity">
+    tools:context=".activity.BiodataDesaActivity">
 
     <TableLayout
         android:id="@+id/table"
@@ -39,7 +39,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/nexabold"
-                    android:text="Total Permohonan Biodata"
+                    android:text="PERMOHONAN BIODATA"
                     android:textColor="#897537" />
 
                 <TextView
@@ -47,7 +47,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/nexabold"
-                    android:text="Kecamatan Jatibanteng"
+                    android:text="KECAMATAN BANYUGLUGUR"
                     android:textColor="#897537" />
             </LinearLayout>
 

@@ -1,4 +1,4 @@
-package mifta.code.dispendukproject1;
+package mifta.code.dispendukproject1.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -20,9 +20,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-import mifta.code.dispendukproject1.activity.BiodataActivity;
-import mifta.code.dispendukproject1.activity.LoginActivity;
-import mifta.code.dispendukproject1.adapter.BiodataAdapter;
+import mifta.code.dispendukproject1.R;
 import mifta.code.dispendukproject1.adapter.BiodataDesaAdapter;
 import mifta.code.dispendukproject1.api.API;
 import mifta.code.dispendukproject1.api.koneksi;
