@@ -115,42 +115,7 @@ public class BiodataDesaActivity extends AppCompatActivity {
         final String jwt_ = sharedPreferences.getString("jwt", "0");
         API api = koneksi.getClient().create(API.class);
 
-        Call<respon> aksi = null;
-        if (no_kec == 1) {
-            aksi = api.biodata_1jat(jwt_);
-        } else if (no_kec == 2) {
-            aksi = api.biodata_2bes(jwt_);
-        } else if (no_kec == 3) {
-            aksi = api.biodata_3sub(jwt_);
-        }else if (no_kec == 4) {
-            aksi = api.biodata_4mlan(jwt_);
-        } else if (no_kec == 5) {
-            aksi = api.biodata_5kend(jwt_);
-        }else if (no_kec == 6) {
-            aksi = api.biodata_6pan(jwt_);
-        } else if (no_kec == 7) {
-            aksi = api.biodata_7sit(jwt_);
-        }else if (no_kec == 8) {
-            aksi = api.biodata_8panji(jwt_);
-        } else if (no_kec == 9) {
-            aksi = api.biodata_9mang(jwt_);
-        }else if (no_kec == 10) {
-            aksi = api.biodata_10kap(jwt_);
-        } else if (no_kec == 11) {
-            aksi = api.biodata_11arj(jwt_);
-        }else if (no_kec == 12) {
-            aksi = api.biodata_12jang(jwt_);
-        } else if (no_kec == 13) {
-            aksi = api.biodata_13asem(jwt_);
-        }else if (no_kec == 14) {
-            aksi = api.biodata_14putih(jwt_);
-        } else if (no_kec == 15) {
-            aksi = api.biodata_15sumb(jwt_);
-        }else if (no_kec == 16) {
-            aksi = api.biodata_16glugur(jwt_);
-        } else if (no_kec == 17) {
-            aksi = api.biodata_17bung(jwt_);
-        }
+        Call<respon> aksi = api.biodata_desa(jwt_, no_kec);
 
         aksi.enqueue(new Callback<respon>() {
             @Override

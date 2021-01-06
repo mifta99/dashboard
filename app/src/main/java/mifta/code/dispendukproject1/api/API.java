@@ -67,106 +67,44 @@ public interface API {
     @GET("count_perkawinan_kec.php")
     Call<respon> count_perkawinan_kec(@Header("Authorization") String Authorization);
 
-    @GET("biodata_1jat.php")
-    Call<respon> biodata_1jat(@Header("Authorization") String Authorization);
+    @FormUrlEncoded
+    @POST("biodata_desa.php")
+    Call<respon> biodata_desa(@Header("Authorization") String Authorization,
+                              @Field("NO_KEC") int NO_KEC);
+    @FormUrlEncoded
+    @POST("kelahiran_desa.php")
+    Call<respon> kelahiran_desa(@Header("Authorization") String Authorization,
+                              @Field("NO_KEC") int NO_KEC);
 
-    @GET("biodata_2bes.php")
-    Call<respon> biodata_2bes(@Header("Authorization") String Authorization);
+    @FormUrlEncoded
+    @POST("kematian_desa.php")
+    Call<respon> kematian_desa(@Header("Authorization") String Authorization,
+                              @Field("NO_KEC") int NO_KEC);
+    @FormUrlEncoded
+    @POST("kk_desa.php")
+    Call<respon> kk_desa(@Header("Authorization") String Authorization,
+                                @Field("NO_KEC") int NO_KEC);
 
-    @GET("biodata_3sub.php")
-    Call<respon> biodata_3sub(@Header("Authorization") String Authorization);
+    @FormUrlEncoded
+    @POST("pencetakan_desa.php")
+    Call<respon> pencetakan_desa(@Header("Authorization") String Authorization,
+                              @Field("NO_KEC") int NO_KEC);
+    @FormUrlEncoded
+    @POST("perceraian_desa.php")
+    Call<respon> perceraian_desa(@Header("Authorization") String Authorization,
+                                @Field("NO_KEC") int NO_KEC);
 
-    @GET("biodata_4mlan.php")
-    Call<respon> biodata_4mlan(@Header("Authorization") String Authorization);
+    @FormUrlEncoded
+    @POST("perekaman_desa.php")
+    Call<respon> perekaman_desa(@Header("Authorization") String Authorization,
+                              @Field("NO_KEC") int NO_KEC);
+    @FormUrlEncoded
+    @POST("perkawinan_desa.php")
+    Call<respon> perkawinan_desa(@Header("Authorization") String Authorization,
+                                @Field("NO_KEC") int NO_KEC);
 
-    @GET("biodata_5kend.php")
-    Call<respon> biodata_5kend(@Header("Authorization") String Authorization);
-
-    @GET("biodata_6pan.php")
-    Call<respon> biodata_6pan(@Header("Authorization") String Authorization);
-
-    @GET("biodata_7sit.php")
-    Call<respon> biodata_7sit(@Header("Authorization") String Authorization);
-
-    @GET("biodata_8panji.php")
-    Call<respon> biodata_8panji(@Header("Authorization") String Authorization);
-
-    @GET("biodata_9mang.php")
-    Call<respon> biodata_9mang(@Header("Authorization") String Authorization);
-
-    @GET("biodata_10kap.php")
-    Call<respon> biodata_10kap(@Header("Authorization") String Authorization);
-
-    @GET("biodata_11arj.php")
-    Call<respon> biodata_11arj(@Header("Authorization") String Authorization);
-
-    @GET("biodata_12jang.php")
-    Call<respon> biodata_12jang(@Header("Authorization") String Authorization);
-
-    @GET("biodata_13asem.php")
-    Call<respon> biodata_13asem(@Header("Authorization") String Authorization);
-
-    @GET("biodata_14putih.php")
-    Call<respon> biodata_14putih(@Header("Authorization") String Authorization);
-
-    @GET("biodata_15sumb.php")
-    Call<respon> biodata_15sumb(@Header("Authorization") String Authorization);
-
-    @GET("biodata_16glugur.php")
-    Call<respon> biodata_16glugur(@Header("Authorization") String Authorization);
-
-    @GET("biodata_17bung.php")
-    Call<respon> biodata_17bung(@Header("Authorization") String Authorization);
-
-    @GET("kelahiran_1jat.php")
-    Call<respon> kelahiran_1jat(@Header("Authorization") String Authorization);
-
-    @GET("kelahiran_2bes.php")
-    Call<respon> kelahiran_2bes(@Header("Authorization") String Authorization);
-
-    @GET("kelahiran_3sub.php")
-    Call<respon> kelahiran_3sub(@Header("Authorization") String Authorization);
-
-    @GET("kelahiran_4mlan.php")
-    Call<respon> kelahiran_4mlan(@Header("Authorization") String Authorization);
-
-    @GET("kelahiran_5kend.php")
-    Call<respon> kelahiran_5kend(@Header("Authorization") String Authorization);
-
-    @GET("kelahiran_6pan.php")
-    Call<respon> kelahiran_6pan(@Header("Authorization") String Authorization);
-
-    @GET("kelahiran_7sit.php")
-    Call<respon> kelahiran_7sit(@Header("Authorization") String Authorization);
-
-    @GET("kelahiran_8panji.php")
-    Call<respon> kelahiran_8panji(@Header("Authorization") String Authorization);
-
-    @GET("kelahiran_9mang.php")
-    Call<respon> kelahiran_9mang(@Header("Authorization") String Authorization);
-
-    @GET("kelahiran_10kap.php")
-    Call<respon> kelahiran_10kap(@Header("Authorization") String Authorization);
-
-    @GET("kelahiran_11arj.php")
-    Call<respon> kelahiran_11arj(@Header("Authorization") String Authorization);
-
-    @GET("kelahiran_12jang.php")
-    Call<respon> kelahiran_12jang(@Header("Authorization") String Authorization);
-
-    @GET("kelahiran_13asem.php")
-    Call<respon> kelahiran_13asem(@Header("Authorization") String Authorization);
-
-    @GET("kelahiran_14putih.php")
-    Call<respon> kelahiran_14putih(@Header("Authorization") String Authorization);
-
-    @GET("kelahiran_15sumb.php")
-    Call<respon> kelahiran_15sumb(@Header("Authorization") String Authorization);
-
-    @GET("kelahiran_16glugur.php")
-    Call<respon> kelahiran_16glugur(@Header("Authorization") String Authorization);
-
-    @GET("kelahiran_17bung.php")
-    Call<respon> kelahiran_17bung(@Header("Authorization") String Authorization);
-
+    @FormUrlEncoded
+    @POST("perpindahan_desa.php")
+    Call<respon> perpindahan_desa(@Header("Authorization") String Authorization,
+                              @Field("NO_KEC") int NO_KEC);
 }
