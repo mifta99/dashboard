@@ -98,16 +98,9 @@ public class BiodataDesaActivity extends AppCompatActivity {
         total_kab.setText(tot_kec);
         nama.setText("KECAMATAN " + nama_kec);
 
-        if (no_kec == 1){
-            jatibanteng();
-        }else if (no_kec == 2){
-            besuki();
-        }else if (no_kec == 3){
-
-        }
-
-
+        desa();
     }
+
     private void showLoading(Boolean state) {
         if (state) {
             progressBar.setVisibility(View.VISIBLE);
@@ -115,44 +108,47 @@ public class BiodataDesaActivity extends AppCompatActivity {
             progressBar.setVisibility(View.GONE);
         }
     }
-    private void jatibanteng() {
+    private void desa() {
         final SharedPreferences sharedPreferences = getSharedPreferences("myproject", Context.MODE_PRIVATE);
         final String jwt_ = sharedPreferences.getString("jwt", "0");
         API api = koneksi.getClient().create(API.class);
 
-        Call<respon> aksi = api.biodata_1jat(jwt_);
-
-        aksi.enqueue(new Callback<respon>() {
-            @Override
-            public void onResponse(Call<respon> call, Response<respon> response) {
-                Log.d("coderespon", String.valueOf(response.code()));
-                results.clear();
-                if (response.code() != 200) {
-                    Toast.makeText(BiodataDesaActivity.this, "Token tidak valid atau Token expired", Toast.LENGTH_SHORT).show();
-                    logout();
-                } else {
-                    showLoading(false);
-                    results = response.body().getResult();
-                    biodataDesaAdapter = new BiodataDesaAdapter(BiodataDesaActivity.this, results);
-                    recyclerView.getRecycledViewPool().clear();
-                    biodataDesaAdapter.notifyDataSetChanged();
-                    recyclerView.setAdapter(biodataDesaAdapter);
-                }
-            }
-
-            @Override
-            public void onFailure(Call<respon> call, Throwable t) {
-
-            }
-        });
-    }
-
-    private void besuki() {
-        final SharedPreferences sharedPreferences = getSharedPreferences("myproject", Context.MODE_PRIVATE);
-        final String jwt_ = sharedPreferences.getString("jwt", "0");
-        API api = koneksi.getClient().create(API.class);
-
-        Call<respon> aksi = api.biodata_2bes(jwt_);
+        Call<respon> aksi = null;
+        if (no_kec == 1) {
+            aksi = api.biodata_1jat(jwt_);
+        } else if (no_kec == 2) {
+            aksi = api.biodata_2bes(jwt_);
+        } else if (no_kec == 3) {
+            aksi = api.biodata_3sub(jwt_);
+        }else if (no_kec == 4) {
+            aksi = api.biodata_4mlan(jwt_);
+        } else if (no_kec == 5) {
+            aksi = api.biodata_5kend(jwt_);
+        }else if (no_kec == 6) {
+            aksi = api.biodata_6pan(jwt_);
+        } else if (no_kec == 7) {
+            aksi = api.biodata_7sit(jwt_);
+        }else if (no_kec == 8) {
+            aksi = api.biodata_8panji(jwt_);
+        } else if (no_kec == 9) {
+            aksi = api.biodata_9mang(jwt_);
+        }else if (no_kec == 10) {
+            aksi = api.biodata_10kap(jwt_);
+        } else if (no_kec == 11) {
+            aksi = api.biodata_11arj(jwt_);
+        }else if (no_kec == 12) {
+            aksi = api.biodata_12jang(jwt_);
+        } else if (no_kec == 13) {
+            aksi = api.biodata_13asem(jwt_);
+        }else if (no_kec == 14) {
+            aksi = api.biodata_14putih(jwt_);
+        } else if (no_kec == 15) {
+            aksi = api.biodata_15sumb(jwt_);
+        }else if (no_kec == 16) {
+            aksi = api.biodata_16glugur(jwt_);
+        } else if (no_kec == 17) {
+            aksi = api.biodata_17bung(jwt_);
+        }
 
         aksi.enqueue(new Callback<respon>() {
             @Override
