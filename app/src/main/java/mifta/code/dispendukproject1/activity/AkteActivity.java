@@ -14,8 +14,8 @@ import mifta.code.dispendukproject1.R;
 import mifta.code.dispendukproject1.api.tampil;
 
 public class AkteActivity extends AppCompatActivity implements View.OnClickListener {
-    ImageView kelahiran, kematian, perkawinan, perceraian;
     private final List<tampil> results = new ArrayList<>();
+    ImageView kelahiran, kematian, perkawinan, perceraian;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

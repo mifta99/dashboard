@@ -21,8 +21,6 @@ import java.util.Calendar;
 import java.util.List;
 
 import mifta.code.dispendukproject1.R;
-import mifta.code.dispendukproject1.adapter.KelahiranDesaAdapter;
-import mifta.code.dispendukproject1.adapter.PerceraianDesaAdapter;
 import mifta.code.dispendukproject1.adapter.PerekamanDesaAdapter;
 import mifta.code.dispendukproject1.api.API;
 import mifta.code.dispendukproject1.api.koneksi;
@@ -94,7 +92,7 @@ public class PerekamanDesaActivity extends AppCompatActivity {
         progressBar.setIndeterminateDrawable(circle);
 
         Intent intent = getIntent();
-        no_kec = intent.getIntExtra("no_kec",0);
+        no_kec = intent.getIntExtra("no_kec", 0);
         nama_kec = intent.getStringExtra("nama_kec");
         tot_kec = intent.getStringExtra("tot_kec");
 
@@ -112,12 +110,14 @@ public class PerekamanDesaActivity extends AppCompatActivity {
             progressBar.setVisibility(View.GONE);
         }
     }
+
     private void desa() {
         final SharedPreferences sharedPreferences = getSharedPreferences("myproject", Context.MODE_PRIVATE);
         final String jwt_ = sharedPreferences.getString("jwt", "0");
         API api = koneksi.getClient().create(API.class);
 
-        Call<respon> aksi = api.perekaman_desa(jwt_, no_kec);;
+        Call<respon> aksi = api.perekaman_desa(jwt_, no_kec);
+        ;
 
         aksi.enqueue(new Callback<respon>() {
             @Override

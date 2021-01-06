@@ -27,7 +27,7 @@ public class KtpActivity extends AppCompatActivity implements View.OnClickListen
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.bt_pencetakan:
                 Intent a = new Intent(KtpActivity.this, KtpPencetakanActivity.class);
                 startActivity(a);

@@ -29,7 +29,7 @@ public class adapter extends RecyclerView.Adapter<adapter.ListViewHolder> {
         return 0;
     }
 
-    public class ListViewHolder extends RecyclerView.ViewHolder{
+    public class ListViewHolder extends RecyclerView.ViewHolder {
         TextView nama_kec, total_kec, jenis;
         ImageView ic;
 

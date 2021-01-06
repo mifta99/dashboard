@@ -71,40 +71,44 @@ public interface API {
     @POST("biodata_desa.php")
     Call<respon> biodata_desa(@Header("Authorization") String Authorization,
                               @Field("NO_KEC") int NO_KEC);
+
     @FormUrlEncoded
     @POST("kelahiran_desa.php")
     Call<respon> kelahiran_desa(@Header("Authorization") String Authorization,
-                              @Field("NO_KEC") int NO_KEC);
+                                @Field("NO_KEC") int NO_KEC);
 
     @FormUrlEncoded
     @POST("kematian_desa.php")
     Call<respon> kematian_desa(@Header("Authorization") String Authorization,
-                              @Field("NO_KEC") int NO_KEC);
+                               @Field("NO_KEC") int NO_KEC);
+
     @FormUrlEncoded
     @POST("kk_desa.php")
     Call<respon> kk_desa(@Header("Authorization") String Authorization,
-                                @Field("NO_KEC") int NO_KEC);
+                         @Field("NO_KEC") int NO_KEC);
 
     @FormUrlEncoded
     @POST("pencetakan_desa.php")
     Call<respon> pencetakan_desa(@Header("Authorization") String Authorization,
-                              @Field("NO_KEC") int NO_KEC);
+                                 @Field("NO_KEC") int NO_KEC);
+
     @FormUrlEncoded
     @POST("perceraian_desa.php")
     Call<respon> perceraian_desa(@Header("Authorization") String Authorization,
-                                @Field("NO_KEC") int NO_KEC);
+                                 @Field("NO_KEC") int NO_KEC);
 
     @FormUrlEncoded
     @POST("perekaman_desa.php")
     Call<respon> perekaman_desa(@Header("Authorization") String Authorization,
-                              @Field("NO_KEC") int NO_KEC);
+                                @Field("NO_KEC") int NO_KEC);
+
     @FormUrlEncoded
     @POST("perkawinan_desa.php")
     Call<respon> perkawinan_desa(@Header("Authorization") String Authorization,
-                                @Field("NO_KEC") int NO_KEC);
+                                 @Field("NO_KEC") int NO_KEC);
 
     @FormUrlEncoded
     @POST("perpindahan_desa.php")
     Call<respon> perpindahan_desa(@Header("Authorization") String Authorization,
-                              @Field("NO_KEC") int NO_KEC);
+                                  @Field("NO_KEC") int NO_KEC);
 }

@@ -20,31 +20,31 @@ public class tampil {
         return NAMA_KEC;
     }
 
+    public void setNAMA_KEC(String NAMA_KEC) {
+        this.NAMA_KEC = NAMA_KEC;
+    }
+
     public String getTOTAL() {
         return TOTAL;
+    }
+
+    public void setTOTAL(String TOTAL) {
+        this.TOTAL = TOTAL;
     }
 
     public String getJUMLAH() {
         return JUMLAH;
     }
 
-    public int getNO_KEC() {
-        return NO_KEC;
-    }
-
     public void setJUMLAH(String JUMLAH) {
         this.JUMLAH = JUMLAH;
     }
 
+    public int getNO_KEC() {
+        return NO_KEC;
+    }
+
     public void setNO_KEC(int NO_KEC) {
         this.NO_KEC = NO_KEC;
-    }
-
-    public void setNAMA_KEC(String NAMA_KEC) {
-        this.NAMA_KEC = NAMA_KEC;
-    }
-
-    public void setTOTAL(String TOTAL) {
-        this.TOTAL = TOTAL;
     }
 }

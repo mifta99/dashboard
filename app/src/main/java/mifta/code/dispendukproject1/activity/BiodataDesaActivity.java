@@ -92,7 +92,7 @@ public class BiodataDesaActivity extends AppCompatActivity {
         progressBar.setIndeterminateDrawable(circle);
 
         Intent intent = getIntent();
-        no_kec = intent.getIntExtra("no_kec",0);
+        no_kec = intent.getIntExtra("no_kec", 0);
         nama_kec = intent.getStringExtra("nama_kec");
         tot_kec = intent.getStringExtra("tot_kec");
 
@@ -110,6 +110,7 @@ public class BiodataDesaActivity extends AppCompatActivity {
             progressBar.setVisibility(View.GONE);
         }
     }
+
     private void desa() {
         final SharedPreferences sharedPreferences = getSharedPreferences("myproject", Context.MODE_PRIVATE);
         final String jwt_ = sharedPreferences.getString("jwt", "0");

@@ -16,7 +16,6 @@ import com.bumptech.glide.Glide;
 import java.util.List;
 
 import mifta.code.dispendukproject1.R;
-import mifta.code.dispendukproject1.activity.KelahiranDesaActivity;
 import mifta.code.dispendukproject1.activity.PerceraianDesaActivity;
 import mifta.code.dispendukproject1.api.tampil;
 

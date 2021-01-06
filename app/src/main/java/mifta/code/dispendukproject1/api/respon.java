@@ -1,7 +1,6 @@
 package mifta.code.dispendukproject1.api;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class respon {
     String value;

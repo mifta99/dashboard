@@ -15,8 +15,8 @@ import com.bumptech.glide.Glide;
 
 import java.util.List;
 
-import mifta.code.dispendukproject1.activity.BiodataDesaActivity;
 import mifta.code.dispendukproject1.R;
+import mifta.code.dispendukproject1.activity.BiodataDesaActivity;
 import mifta.code.dispendukproject1.api.tampil;
 
 public class BiodataAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
