@@ -33,7 +33,7 @@ import retrofit2.Response;
 import static mifta.code.dispendukproject1.api.Colors.colors;
 
 public class BiodataDesaActivity extends AppCompatActivity {
-    TextView tanggal, bulan, tahun, hari, total_kab, nama;
+    TextView tanggal, bulan, tahun, hari, total_kab, nama, judul;
     RecyclerView recyclerView;
     ProgressBar progressBar;
     private List<tampil> results = new ArrayList<>();
@@ -44,7 +44,7 @@ public class BiodataDesaActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_biodata_desa);
+        setContentView(R.layout.activity_list_desa);
 
         tanggal = findViewById(R.id.tv_date);
         bulan = findViewById(R.id.tv_month);
@@ -53,6 +53,7 @@ public class BiodataDesaActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBar);
         total_kab = findViewById(R.id.tv_totalKab);
         nama = findViewById(R.id.tv_nama);
+        judul = findViewById(R.id.tv_judul);
 
         Calendar calendar = Calendar.getInstance();
         int year = calendar.get(Calendar.YEAR);
@@ -96,6 +97,7 @@ public class BiodataDesaActivity extends AppCompatActivity {
         tot_kec = intent.getStringExtra("tot_kec");
 
         total_kab.setText(tot_kec);
+        judul.setText("PERMOHONAN BIODATA");
         nama.setText("KECAMATAN " + nama_kec);
 
         desa();

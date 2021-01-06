@@ -11,6 +11,6 @@ public class PerceraianDesaActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_perceraian_desa);
+        setContentView(R.layout.activity_list_desa);
     }
 }

@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F4F4F4"
-    tools:context=".activity.KelahiranDesaActivity">
+    android:background="#F4F4F4">
 
     <TableLayout
         android:id="@+id/table"
@@ -36,10 +35,11 @@
                     android:textSize="55sp" />
 
                 <TextView
+                    android:id="@+id/tv_judul"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/nexabold"
-                    android:text="PERMOHONAN AKTA KELAHIRAN"
+                    android:text="PERMOHONAN BIODATA"
                     android:textColor="#897537" />
 
                 <TextView
