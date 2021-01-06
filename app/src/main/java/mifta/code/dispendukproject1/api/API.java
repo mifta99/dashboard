@@ -118,4 +118,55 @@ public interface API {
     @GET("biodata_17bung.php")
     Call<respon> biodata_17bung(@Header("Authorization") String Authorization);
 
+    @GET("kelahiran_1jat.php")
+    Call<respon> kelahiran_1jat(@Header("Authorization") String Authorization);
+
+    @GET("kelahiran_2bes.php")
+    Call<respon> kelahiran_2bes(@Header("Authorization") String Authorization);
+
+    @GET("kelahiran_3sub.php")
+    Call<respon> kelahiran_3sub(@Header("Authorization") String Authorization);
+
+    @GET("kelahiran_4mlan.php")
+    Call<respon> kelahiran_4mlan(@Header("Authorization") String Authorization);
+
+    @GET("kelahiran_5kend.php")
+    Call<respon> kelahiran_5kend(@Header("Authorization") String Authorization);
+
+    @GET("kelahiran_6pan.php")
+    Call<respon> kelahiran_6pan(@Header("Authorization") String Authorization);
+
+    @GET("kelahiran_7sit.php")
+    Call<respon> kelahiran_7sit(@Header("Authorization") String Authorization);
+
+    @GET("kelahiran_8panji.php")
+    Call<respon> kelahiran_8panji(@Header("Authorization") String Authorization);
+
+    @GET("kelahiran_9mang.php")
+    Call<respon> kelahiran_9mang(@Header("Authorization") String Authorization);
+
+    @GET("kelahiran_10kap.php")
+    Call<respon> kelahiran_10kap(@Header("Authorization") String Authorization);
+
+    @GET("kelahiran_11arj.php")
+    Call<respon> kelahiran_11arj(@Header("Authorization") String Authorization);
+
+    @GET("kelahiran_12jang.php")
+    Call<respon> kelahiran_12jang(@Header("Authorization") String Authorization);
+
+    @GET("kelahiran_13asem.php")
+    Call<respon> kelahiran_13asem(@Header("Authorization") String Authorization);
+
+    @GET("kelahiran_14putih.php")
+    Call<respon> kelahiran_14putih(@Header("Authorization") String Authorization);
+
+    @GET("kelahiran_15sumb.php")
+    Call<respon> kelahiran_15sumb(@Header("Authorization") String Authorization);
+
+    @GET("kelahiran_16glugur.php")
+    Call<respon> kelahiran_16glugur(@Header("Authorization") String Authorization);
+
+    @GET("kelahiran_17bung.php")
+    Call<respon> kelahiran_17bung(@Header("Authorization") String Authorization);
+
 }

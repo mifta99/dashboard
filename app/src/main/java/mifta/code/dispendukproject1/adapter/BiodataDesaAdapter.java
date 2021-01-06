@@ -67,7 +67,6 @@ public class BiodataDesaAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     class MyHolder extends RecyclerView.ViewHolder {
         TextView nama_kec, total_kec, jenis;
         ImageView ic;
-        CardView crd;
 
         public MyHolder(View itemView) {
             super(itemView);
@@ -75,7 +74,6 @@ public class BiodataDesaAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
             total_kec = itemView.findViewById(R.id.tvx_totalKec);
             jenis = itemView.findViewById(R.id.tvx_jenis);
             ic = itemView.findViewById(R.id.imx_icpict);
-            crd = itemView.findViewById(R.id.crd);
         }
     }
 
