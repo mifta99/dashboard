@@ -33,7 +33,7 @@ import retrofit2.Response;
 import static mifta.code.dispendukproject1.api.Colors.colors;
 
 public class AktaPerceraianActivity extends AppCompatActivity {
-    TextView tanggal, bulan, tahun, hari, total_kab;
+    TextView tanggal, bulan, tahun, hari, total_kab, judul, nama;
     RecyclerView recyclerView;
     ProgressBar progressBar;
     private List<tampil> results = new ArrayList<>();
@@ -42,7 +42,7 @@ public class AktaPerceraianActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_akta_perceraian);
+        setContentView(R.layout.activity_list);
 
         tanggal = findViewById(R.id.tv_date);
         bulan = findViewById(R.id.tv_month);
@@ -50,6 +50,8 @@ public class AktaPerceraianActivity extends AppCompatActivity {
         hari = findViewById(R.id.tv_day);
         progressBar = findViewById(R.id.progressBar);
         total_kab = findViewById(R.id.tv_totalKab);
+        nama = findViewById(R.id.tv_nama);
+        judul = findViewById(R.id.tv_judul);
 
         Calendar calendar = Calendar.getInstance();
         int year = calendar.get(Calendar.YEAR);
@@ -75,6 +77,9 @@ public class AktaPerceraianActivity extends AppCompatActivity {
         } else if (day == 1) {
             hari.setText("Minggu");
         }
+
+        judul.setText("Total Permohonan");
+        nama.setText("Akta Perceraian");
 
         recyclerView = findViewById(R.id.rv_kk);
         recyclerView.setHasFixedSize(true);

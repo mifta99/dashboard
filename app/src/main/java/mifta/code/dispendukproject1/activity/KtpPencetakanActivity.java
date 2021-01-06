@@ -22,7 +22,6 @@ import java.util.List;
 
 import mifta.code.dispendukproject1.R;
 import mifta.code.dispendukproject1.adapter.KtpPencetakanAdapter;
-import mifta.code.dispendukproject1.adapter.KtpPerekamanAdapter;
 import mifta.code.dispendukproject1.api.API;
 import mifta.code.dispendukproject1.api.koneksi;
 import mifta.code.dispendukproject1.api.respon;
@@ -34,7 +33,7 @@ import retrofit2.Response;
 import static mifta.code.dispendukproject1.api.Colors.colors;
 
 public class KtpPencetakanActivity extends AppCompatActivity {
-    TextView tanggal, bulan, tahun, hari, total_kab;
+    TextView tanggal, bulan, tahun, hari, total_kab, judul, nama;
     RecyclerView recyclerView;
     ProgressBar progressBar;
     private List<tampil> results = new ArrayList<>();
@@ -43,7 +42,7 @@ public class KtpPencetakanActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ktp_pencetakan);
+        setContentView(R.layout.activity_list);
 
         tanggal = findViewById(R.id.tv_date);
         bulan = findViewById(R.id.tv_month);
@@ -51,6 +50,10 @@ public class KtpPencetakanActivity extends AppCompatActivity {
         hari = findViewById(R.id.tv_day);
         progressBar = findViewById(R.id.progressBar);
         total_kab = findViewById(R.id.tv_totalKab);
+        nama = findViewById(R.id.tv_nama);
+        judul = findViewById(R.id.tv_judul);
+        judul.setText("Total Pencetakan");
+        nama.setText("KTP Elektronik");
 
         Calendar calendar = Calendar.getInstance();
         int year = calendar.get(Calendar.YEAR);
