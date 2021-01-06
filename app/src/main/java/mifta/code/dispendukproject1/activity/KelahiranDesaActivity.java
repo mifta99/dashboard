@@ -22,6 +22,7 @@ import java.util.List;
 
 import mifta.code.dispendukproject1.R;
 import mifta.code.dispendukproject1.adapter.BiodataDesaAdapter;
+import mifta.code.dispendukproject1.adapter.KelahiranDesaAdapter;
 import mifta.code.dispendukproject1.api.API;
 import mifta.code.dispendukproject1.api.koneksi;
 import mifta.code.dispendukproject1.api.respon;
@@ -37,7 +38,7 @@ public class KelahiranDesaActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     ProgressBar progressBar;
     private List<tampil> results = new ArrayList<>();
-    private BiodataDesaAdapter biodataDesaAdapter;
+    private KelahiranDesaAdapter kelahiranDesaAdapter;
     private int no_kec;
     private String nama_kec, tot_kec;
 
@@ -128,10 +129,10 @@ public class KelahiranDesaActivity extends AppCompatActivity {
                 } else {
                     showLoading(false);
                     results = response.body().getResult();
-                    biodataDesaAdapter = new BiodataDesaAdapter(KelahiranDesaActivity.this, results);
+                    kelahiranDesaAdapter = new KelahiranDesaAdapter(KelahiranDesaActivity.this, results);
                     recyclerView.getRecycledViewPool().clear();
-                    biodataDesaAdapter.notifyDataSetChanged();
-                    recyclerView.setAdapter(biodataDesaAdapter);
+                    kelahiranDesaAdapter.notifyDataSetChanged();
+                    recyclerView.setAdapter(kelahiranDesaAdapter);
                 }
             }
 

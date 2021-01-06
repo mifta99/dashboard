@@ -46,7 +46,7 @@ public class KematianDesaAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        BiodataDesaAdapter.MyHolder myHolder = (BiodataDesaAdapter.MyHolder) holder;
+        KematianDesaAdapter.MyHolder myHolder = (KematianDesaAdapter.MyHolder) holder;
         tampil result = results.get(position);
         myHolder.nama_kec.setText("DESA " + result.getNAMA_KEL());
         myHolder.total_kec.setText(result.getJUMLAH());

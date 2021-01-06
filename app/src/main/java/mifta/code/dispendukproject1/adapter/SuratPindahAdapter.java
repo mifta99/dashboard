@@ -61,7 +61,7 @@ public class SuratPindahAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         myHolder.crd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), KelahiranDesaActivity.class);
+                Intent intent = new Intent(view.getContext(), PerpindahanDesaAdapter.class);
                 Integer no_kec = Integer.valueOf(result.getNO_KEC());
                 String nama_kec = String.valueOf(result.getNAMA_KEC());
                 String tot_kec = String.valueOf(result.getJUMLAH());
