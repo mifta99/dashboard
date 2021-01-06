@@ -17,6 +17,7 @@ import java.util.List;
 
 import mifta.code.dispendukproject1.R;
 import mifta.code.dispendukproject1.activity.KelahiranDesaActivity;
+import mifta.code.dispendukproject1.activity.PerekamanDesaActivity;
 import mifta.code.dispendukproject1.api.tampil;
 
 public class KtpPerekamanAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
@@ -62,7 +63,7 @@ public class KtpPerekamanAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         myHolder.crd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), PerekamanDesaAdapter.class);
+                Intent intent = new Intent(view.getContext(), PerekamanDesaActivity.class);
                 Integer no_kec = Integer.valueOf(result.getNO_KEC());
                 String nama_kec = String.valueOf(result.getNAMA_KEC());
                 String tot_kec = String.valueOf(result.getJUMLAH());

@@ -17,6 +17,7 @@ import java.util.List;
 
 import mifta.code.dispendukproject1.R;
 import mifta.code.dispendukproject1.activity.KelahiranDesaActivity;
+import mifta.code.dispendukproject1.activity.PerpindahanDesaActivity;
 import mifta.code.dispendukproject1.api.tampil;
 
 public class SuratPindahAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
@@ -61,7 +62,7 @@ public class SuratPindahAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
         myHolder.crd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), PerpindahanDesaAdapter.class);
+                Intent intent = new Intent(view.getContext(), PerpindahanDesaActivity.class);
                 Integer no_kec = Integer.valueOf(result.getNO_KEC());
                 String nama_kec = String.valueOf(result.getNAMA_KEC());
                 String tot_kec = String.valueOf(result.getJUMLAH());
