@@ -1,13 +1,9 @@
 package mifta.code.dispendukproject1.activity;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,17 +11,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import mifta.code.dispendukproject1.R;
-import mifta.code.dispendukproject1.api.API;
-import mifta.code.dispendukproject1.api.koneksi;
-import mifta.code.dispendukproject1.api.respon;
 import mifta.code.dispendukproject1.api.tampil;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class AkteActivity extends AppCompatActivity implements View.OnClickListener {
     ImageView kelahiran, kematian, perkawinan, perceraian;
-    private List<tampil> results = new ArrayList<>();
+    private final List<tampil> results = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

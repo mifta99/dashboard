@@ -15,13 +15,13 @@ import com.bumptech.glide.Glide;
 
 import java.util.List;
 
+import mifta.code.dispendukproject1.BiodataDesaActivity;
 import mifta.code.dispendukproject1.R;
 import mifta.code.dispendukproject1.api.tampil;
-import mifta.code.dispendukproject1.BiodataDesaActivity;
 
 public class BiodataAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-    private Context context;
-    private List<tampil> results;
+    private final Context context;
+    private final List<tampil> results;
 
     public BiodataAdapter(Context context, List<tampil> results) {
         this.context = context;

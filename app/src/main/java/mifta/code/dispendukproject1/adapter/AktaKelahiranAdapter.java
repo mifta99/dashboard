@@ -1,7 +1,6 @@
 package mifta.code.dispendukproject1.adapter;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,8 +17,8 @@ import mifta.code.dispendukproject1.R;
 import mifta.code.dispendukproject1.api.tampil;
 
 public class AktaKelahiranAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-    private Context context;
-    private List<tampil> results;
+    private final Context context;
+    private final List<tampil> results;
 
     public AktaKelahiranAdapter(Context context, List<tampil> results) {
         this.context = context;

@@ -17,8 +17,8 @@ import mifta.code.dispendukproject1.R;
 import mifta.code.dispendukproject1.api.tampil;
 
 public class AktaKematianAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
-    private Context context;
-    private List<tampil> results;
+    private final Context context;
+    private final List<tampil> results;
 
     public AktaKematianAdapter(Context context, List<tampil> results) {
         this.context = context;
