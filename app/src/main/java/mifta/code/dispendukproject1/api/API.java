@@ -73,4 +73,49 @@ public interface API {
     @GET("biodata_2bes.php")
     Call<respon> biodata_2bes(@Header("Authorization") String Authorization);
 
+    @GET("biodata_3sub.php")
+    Call<respon> biodata_3sub(@Header("Authorization") String Authorization);
+
+    @GET("biodata_4mlan.php")
+    Call<respon> biodata_4mlan(@Header("Authorization") String Authorization);
+
+    @GET("biodata_5kend.php")
+    Call<respon> biodata_5kend(@Header("Authorization") String Authorization);
+
+    @GET("biodata_6pan.php")
+    Call<respon> biodata_6pan(@Header("Authorization") String Authorization);
+
+    @GET("biodata_7sit.php")
+    Call<respon> biodata_7sit(@Header("Authorization") String Authorization);
+
+    @GET("biodata_8panji.php")
+    Call<respon> biodata_8panji(@Header("Authorization") String Authorization);
+
+    @GET("biodata_9mang.php")
+    Call<respon> biodata_9mang(@Header("Authorization") String Authorization);
+
+    @GET("biodata_10kap.php")
+    Call<respon> biodata_10kap(@Header("Authorization") String Authorization);
+
+    @GET("biodata_11arj.php")
+    Call<respon> biodata_11arj(@Header("Authorization") String Authorization);
+
+    @GET("biodata_12jang.php")
+    Call<respon> biodata_12jang(@Header("Authorization") String Authorization);
+
+    @GET("biodata_13asem.php")
+    Call<respon> biodata_13asem(@Header("Authorization") String Authorization);
+
+    @GET("biodata_14putih.php")
+    Call<respon> biodata_14putih(@Header("Authorization") String Authorization);
+
+    @GET("biodata_15sumb.php")
+    Call<respon> biodata_15sumb(@Header("Authorization") String Authorization);
+
+    @GET("biodata_16glugur.php")
+    Call<respon> biodata_16glugur(@Header("Authorization") String Authorization);
+
+    @GET("biodata_17bung.php")
+    Call<respon> biodata_17bung(@Header("Authorization") String Authorization);
+
 }
