@@ -47,7 +47,7 @@ public class BiodataDetailAdapter extends RecyclerView.Adapter<RecyclerView.View
         tampil result = results.get(position);
         myHolder.user.setText(result.getREQ_BY());
         myHolder.nik.setText(result.getNIK());
-        myHolder.no_kk.setText(result.getNIK());
+        myHolder.no_kk.setText(result.getNO_KK());
         myHolder.nama.setText(result.getNAMA_LGKP());
         myHolder.tgl.setText(result.getTGL_LHR());
         myHolder.alamat.setText(result.getALAMAT());
