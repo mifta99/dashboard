@@ -7,6 +7,36 @@ public class tampil {
     public String TOTAL;
     public int NO_KEL;
     public String NAMA_KEL;
+    public String NIK;
+    public String NO_KK;
+    public String NAMA_LGKP;
+    public String TGL_LHR;
+    public String ALAMAT;
+    public String REQ_BY;
+
+    public String getNIK() {
+        return NIK;
+    }
+
+    public String getNO_KK() {
+        return NO_KK;
+    }
+
+    public String getNAMA_LGKP() {
+        return NAMA_LGKP;
+    }
+
+    public String getTGL_LHR() {
+        return TGL_LHR;
+    }
+
+    public String getALAMAT() {
+        return ALAMAT;
+    }
+
+    public String getREQ_BY() {
+        return REQ_BY;
+    }
 
     public int getNO_KEL() {
         return NO_KEL;

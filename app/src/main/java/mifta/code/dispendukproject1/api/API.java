@@ -111,4 +111,10 @@ public interface API {
     @POST("perpindahan_desa.php")
     Call<respon> perpindahan_desa(@Header("Authorization") String Authorization,
                                   @Field("NO_KEC") int NO_KEC);
+
+    @FormUrlEncoded
+    @POST("biodata_detail.php")
+    Call<respon> biodata_detail(@Header("Authorization") String Authorization,
+                                @Field("NO_KEC") int NO_KEC,
+                                @Field("NO_KEL") int NO_KEL);
 }

@@ -2,6 +2,7 @@ package mifta.code.dispendukproject1.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -62,6 +63,10 @@ public class BiodataAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         myHolder.crd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                SharedPreferences sharedPreferences = view.getContext().getSharedPreferences("myproject", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putInt("no_kec", result.getNO_KEC());
+                editor.commit();
                 Intent intent = new Intent(view.getContext(), BiodataDesaActivity.class);
                 Integer no_kec = Integer.valueOf(result.getNO_KEC());
                 String nama_kec = String.valueOf(result.getNAMA_KEC());
