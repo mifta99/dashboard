@@ -61,21 +61,21 @@ public class BiodataDesaAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
                 .placeholder(R.drawable.ic_loading)
                 .error(R.drawable.ic_loading)
                 .into(myHolder.ic);
-        myHolder.crd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                final SharedPreferences sharedPreferences = view.getContext().getSharedPreferences("myproject", Context.MODE_PRIVATE);
-                final int no_kec = sharedPreferences.getInt("no_kec", 0);
-                Intent intent = new Intent(view.getContext(), BiodataDetailActivity.class);
-                Integer no_kel = Integer.valueOf(result.getNO_KEL());
-                String nama_kel = String.valueOf(result.getNAMA_KEL());
-                String tot_kel = String.valueOf(result.getJUMLAH());
-                intent.putExtra("no_kel", no_kel);
-                intent.putExtra("nama_kel", nama_kel);
-                intent.putExtra("tot_kel", tot_kel);
-                context.startActivity(intent);
-            }
-        });
+        if (Integer.valueOf(result.getJUMLAH()) != 0){
+            myHolder.crd.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(view.getContext(), BiodataDetailActivity.class);
+                    Integer no_kel = Integer.valueOf(result.getNO_KEL());
+                    String nama_kel = String.valueOf(result.getNAMA_KEL());
+                    String tot_kel = String.valueOf(result.getJUMLAH());
+                    intent.putExtra("no_kel", no_kel);
+                    intent.putExtra("nama_kel", nama_kel);
+                    intent.putExtra("tot_kel", tot_kel);
+                    context.startActivity(intent);
+                }
+            });
+        }
     }
 
     @Override
