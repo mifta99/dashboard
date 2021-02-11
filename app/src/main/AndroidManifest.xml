@@ -13,8 +13,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activity.PencetakanDetailActivity"
+        <activity android:name=".activity.PerekamanDetailActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+        <activity
+            android:name=".activity.PencetakanDetailActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".activity.KematianDetailActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
