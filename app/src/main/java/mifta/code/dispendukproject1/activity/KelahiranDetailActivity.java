@@ -21,7 +21,7 @@ import java.util.Calendar;
 import java.util.List;
 
 import mifta.code.dispendukproject1.R;
-import mifta.code.dispendukproject1.adapter.BiodataDetailAdapter;
+import mifta.code.dispendukproject1.adapter.KelahiranDetailAdapter;
 import mifta.code.dispendukproject1.adapter.KkDetailAdapter;
 import mifta.code.dispendukproject1.api.API;
 import mifta.code.dispendukproject1.api.koneksi;
@@ -33,19 +33,18 @@ import retrofit2.Response;
 
 import static mifta.code.dispendukproject1.api.Colors.colors;
 
-public class KkDetailActivity extends AppCompatActivity {
+public class KelahiranDetailActivity extends AppCompatActivity {
     TextView tanggal, bulan, tahun, hari, total_kab, nama, judul;
     RecyclerView recyclerView;
     ProgressBar progressBar;
     private List<tampil> results = new ArrayList<>();
-    private KkDetailAdapter kkDetailAdapter;
+    private KelahiranDetailAdapter kelahiranDetailAdapter;
     private int no_kec, no_kel;
     private String nama_kel, tot_kel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_list);
 
         tanggal = findViewById(R.id.tv_date);
@@ -99,7 +98,7 @@ public class KkDetailActivity extends AppCompatActivity {
         tot_kel = intent.getStringExtra("tot_kel");
 
         total_kab.setText(tot_kel);
-        judul.setText("PERMOHONAN KARTU KELUARGA");
+        judul.setText("PERMOHONAN AKTA KELAHIRAN");
         nama.setText("DESA " + nama_kel);
 
         SharedPreferences sharedPreferences = getSharedPreferences("myproject", Context.MODE_PRIVATE);
@@ -121,7 +120,7 @@ public class KkDetailActivity extends AppCompatActivity {
         final String jwt_ = sharedPreferences.getString("jwt", "0");
         API api = koneksi.getClient().create(API.class);
 
-        Call<respon> aksi = api.kk_detail(jwt_, no_kec, no_kel);
+        Call<respon> aksi = api.kelahiran_detail(jwt_, no_kec, no_kel);
 
         aksi.enqueue(new Callback<respon>() {
             @Override
@@ -131,14 +130,14 @@ public class KkDetailActivity extends AppCompatActivity {
                 if (response.code() == 200) {
                     showLoading(false);
                     results = response.body().getResult();
-                    kkDetailAdapter = new KkDetailAdapter(KkDetailActivity.this, results);
+                    kelahiranDetailAdapter = new KelahiranDetailAdapter(KelahiranDetailActivity.this, results);
                     recyclerView.getRecycledViewPool().clear();
-                    kkDetailAdapter.notifyDataSetChanged();
-                    recyclerView.setAdapter(kkDetailAdapter);
+                    kelahiranDetailAdapter.notifyDataSetChanged();
+                    recyclerView.setAdapter(kelahiranDetailAdapter);
                 } else if(response.code() == 204){
-                    Toast.makeText(KkDetailActivity.this, "Data Tidak Ada", Toast.LENGTH_LONG).show();
+                    Toast.makeText(KelahiranDetailActivity.this, "Data Tidak Ada", Toast.LENGTH_LONG).show();
                 }else {
-                    Toast.makeText(KkDetailActivity.this, "Token tidak valid atau Token expired", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(KelahiranDetailActivity.this, "Token tidak valid atau Token expired", Toast.LENGTH_SHORT).show();
                     logout();
                 }
             }
@@ -155,7 +154,7 @@ public class KkDetailActivity extends AppCompatActivity {
         SharedPreferences.Editor akses = sharedPreferences.edit();
         akses.clear();
         akses.commit();
-        startActivity(new Intent(KkDetailActivity.this, LoginActivity.class));
+        startActivity(new Intent(KelahiranDetailActivity.this, LoginActivity.class));
         finish();
     }
 }
