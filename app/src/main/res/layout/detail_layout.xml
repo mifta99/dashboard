@@ -60,6 +60,7 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
+                    android:layout_marginBottom="5dp"
                     android:background="@color/colorPrimary" />
 
                 <LinearLayout
@@ -74,7 +75,6 @@
                         android:layout_alignParentStart="true"
                         android:layout_alignParentLeft="true"
                         android:layout_marginLeft="15dp"
-                        android:layout_marginTop="5dp"
                         android:textSize="12sp"
                         android:layout_weight="2"
                         android:fontFamily="@font/nexabold"
@@ -87,7 +87,6 @@
                         android:layout_alignParentStart="true"
                         android:layout_alignParentLeft="true"
                         android:layout_marginLeft="5dp"
-                        android:layout_marginTop="5dp"
                         android:layout_weight="1"
                         android:textSize="12sp"
                         android:fontFamily="@font/nexalight"

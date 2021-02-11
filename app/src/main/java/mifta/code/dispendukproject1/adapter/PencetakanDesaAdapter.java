@@ -1,12 +1,14 @@
 package mifta.code.dispendukproject1.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -14,6 +16,8 @@ import com.bumptech.glide.Glide;
 import java.util.List;
 
 import mifta.code.dispendukproject1.R;
+import mifta.code.dispendukproject1.activity.BiodataDetailActivity;
+import mifta.code.dispendukproject1.activity.PencetakanDetailActivity;
 import mifta.code.dispendukproject1.api.tampil;
 
 public class PencetakanDesaAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
@@ -56,6 +60,21 @@ public class PencetakanDesaAdapter extends RecyclerView.Adapter<RecyclerView.Vie
                 .placeholder(R.drawable.ic_loading)
                 .error(R.drawable.ic_loading)
                 .into(myHolder.ic);
+        if (Integer.valueOf(result.getJUMLAH()) != 0){
+            myHolder.crd.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(view.getContext(), PencetakanDetailActivity.class);
+                    Integer no_kel = Integer.valueOf(result.getNO_KEL());
+                    String nama_kel = String.valueOf(result.getNAMA_KEL());
+                    String tot_kel = String.valueOf(result.getJUMLAH());
+                    intent.putExtra("no_kel", no_kel);
+                    intent.putExtra("nama_kel", nama_kel);
+                    intent.putExtra("tot_kel", tot_kel);
+                    context.startActivity(intent);
+                }
+            });
+        }
     }
 
     @Override
@@ -67,6 +86,7 @@ public class PencetakanDesaAdapter extends RecyclerView.Adapter<RecyclerView.Vie
         TextView nama_kec, total_kec, jenis;
         TextView jenis2;
         ImageView ic;
+        CardView crd;
 
         public MyHolder(View itemView) {
             super(itemView);
@@ -75,6 +95,7 @@ public class PencetakanDesaAdapter extends RecyclerView.Adapter<RecyclerView.Vie
             jenis = itemView.findViewById(R.id.tvx_jenis);
             jenis2 = itemView.findViewById(R.id.tvx_jenis2);
             ic = itemView.findViewById(R.id.imx_icpict);
+            crd = itemView.findViewById(R.id.crd);
         }
     }
 
