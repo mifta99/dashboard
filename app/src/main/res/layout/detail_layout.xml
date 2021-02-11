@@ -64,7 +64,9 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ly_no_doc"
+                    android:visibility="gone">
 
                     <TextView
                         android:layout_width="match_parent"
@@ -73,6 +75,36 @@
                         android:layout_alignParentLeft="true"
                         android:layout_marginLeft="15dp"
                         android:layout_marginTop="5dp"
+                        android:textSize="12sp"
+                        android:layout_weight="2"
+                        android:fontFamily="@font/nexabold"
+                        android:text="NO DOKUMEN" />
+
+                    <TextView
+                        android:id="@+id/tvx_no_doc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="1"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/nexalight"
+                        android:text="AOL-010202" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ly_nik">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="15dp"
                         android:textSize="12sp"
                         android:layout_weight="2"
                         android:fontFamily="@font/nexabold"
@@ -85,7 +117,6 @@
                         android:layout_alignParentStart="true"
                         android:layout_alignParentLeft="true"
                         android:layout_marginLeft="5dp"
-                        android:layout_marginTop="5dp"
                         android:layout_weight="1"
                         android:textSize="12sp"
                         android:fontFamily="@font/nexalight"
@@ -94,7 +125,8 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ly_no_kk">
 
                     <TextView
                         android:layout_width="match_parent"
@@ -122,7 +154,8 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ly_nama">
 
                     <TextView
                         android:layout_width="match_parent"
@@ -150,7 +183,8 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ly_tgl">
 
                     <TextView
                         android:layout_width="match_parent"
@@ -179,7 +213,37 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:visibility="visible">
+                    android:id="@+id/ly_tgl_mati"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="15dp"
+                        android:layout_weight="2"
+                        android:fontFamily="@font/nexabold"
+                        android:textSize="12sp"
+                        android:text="TGL KEMATIAN" />
+
+                    <TextView
+                        android:id="@+id/tvx_tgl_mati"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/nexalight"
+                        android:text="01 Januari 2021" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ly_alamat">
 
                     <TextView
                         android:layout_width="match_parent"
@@ -203,6 +267,181 @@
                         android:textSize="12sp"
                         android:fontFamily="@font/nexalight"
                         android:text="Jl sucipto" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ly_nik_suami"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="15dp"
+                        android:layout_weight="2"
+                        android:fontFamily="@font/nexabold"
+                        android:textSize="12sp"
+                        android:text="NIK SUAMI" />
+
+                    <TextView
+                        android:id="@+id/tvx_nik_suami"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/nexalight"
+                        android:text="35120000000000" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ly_nama_suami"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="15dp"
+                        android:layout_weight="2"
+                        android:fontFamily="@font/nexabold"
+                        android:textSize="12sp"
+                        android:text="NAMA SUAMI" />
+
+                    <TextView
+                        android:id="@+id/tvx_nama_suami"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/nexalight"
+                        android:text="Nama" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ly_nik_istri"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="15dp"
+                        android:layout_weight="2"
+                        android:fontFamily="@font/nexabold"
+                        android:textSize="12sp"
+                        android:text="NIK ISTRI" />
+
+                    <TextView
+                        android:id="@+id/tvx_nik_istri"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/nexalight"
+                        android:text="35120000000000" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ly_nama_istri"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="15dp"
+                        android:layout_weight="2"
+                        android:fontFamily="@font/nexabold"
+                        android:textSize="12sp"
+                        android:text="NAMA ISTRI" />
+
+                    <TextView
+                        android:id="@+id/tvx_nama_istri"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/nexalight"
+                        android:text="Nama" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ly_tgl_kawin"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="15dp"
+                        android:layout_weight="2"
+                        android:fontFamily="@font/nexabold"
+                        android:textSize="12sp"
+                        android:text="TGL KAWIN" />
+
+                    <TextView
+                        android:id="@+id/tvx_tgl_kawin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/nexalight"
+                        android:text="01 Januari 2021" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ly_tgl_cerai"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="15dp"
+                        android:layout_weight="2"
+                        android:fontFamily="@font/nexabold"
+                        android:textSize="12sp"
+                        android:text="TGL CERAI" />
+
+                    <TextView
+                        android:id="@+id/tvx_tgl_cerai"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/nexalight"
+                        android:text="01 Januari 2021" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>

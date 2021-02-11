@@ -13,6 +13,14 @@ public class tampil {
     public String TGL_LHR;
     public String ALAMAT;
     public String REQ_BY;
+    public String NO_DOC;
+    public String TGL_MATI;
+    public String NIK_SUAMI;
+    public String NAMA_SUAMI;
+    public String NIK_ISTRI;
+    public String NAMA_ISTRI;
+    public String TGL_KAWIN;
+    public String TGL_CERAI;
 
     public String getNIK() {
         return NIK;
@@ -38,6 +46,38 @@ public class tampil {
         return REQ_BY;
     }
 
+    public String getNO_DOC() {
+        return NO_DOC;
+    }
+
+    public String getTGL_MATI() {
+        return TGL_MATI;
+    }
+
+    public String getNIK_SUAMI() {
+        return NIK_SUAMI;
+    }
+
+    public String getNAMA_SUAMI() {
+        return NAMA_SUAMI;
+    }
+
+    public String getNIK_ISTRI() {
+        return NIK_ISTRI;
+    }
+
+    public String getNAMA_ISTRI() {
+        return NAMA_ISTRI;
+    }
+
+    public String getTGL_KAWIN() {
+        return TGL_KAWIN;
+    }
+
+    public String getTGL_CERAI() {
+        return TGL_CERAI;
+    }
+
     public int getNO_KEL() {
         return NO_KEL;
     }
@@ -48,10 +88,6 @@ public class tampil {
 
     public String getNAMA_KEC() {
         return NAMA_KEC;
-    }
-
-    public void setNAMA_KEC(String NAMA_KEC) {
-        this.NAMA_KEC = NAMA_KEC;
     }
 
     public String getTOTAL() {
@@ -66,15 +102,7 @@ public class tampil {
         return JUMLAH;
     }
 
-    public void setJUMLAH(String JUMLAH) {
-        this.JUMLAH = JUMLAH;
-    }
-
     public int getNO_KEC() {
         return NO_KEC;
-    }
-
-    public void setNO_KEC(int NO_KEC) {
-        this.NO_KEC = NO_KEC;
     }
 }
