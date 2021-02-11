@@ -117,4 +117,44 @@ public interface API {
     Call<respon> biodata_detail(@Header("Authorization") String Authorization,
                                 @Field("NO_KEC") int NO_KEC,
                                 @Field("NO_KEL") int NO_KEL);
+    @FormUrlEncoded
+    @POST("kk_detail.php")
+    Call<respon> kk_detail(@Header("Authorization") String Authorization,
+                                @Field("NO_KEC") int NO_KEC,
+                                @Field("NO_KEL") int NO_KEL);
+    @FormUrlEncoded
+    @POST("kelahiran_detail.php")
+    Call<respon> kelahiran_detail(@Header("Authorization") String Authorization,
+                           @Field("NO_KEC") int NO_KEC,
+                           @Field("NO_KEL") int NO_KEL);
+    @FormUrlEncoded
+    @POST("kematian_detail.php")
+    Call<respon> kematian_detail(@Header("Authorization") String Authorization,
+                                  @Field("NO_KEC") int NO_KEC,
+                                  @Field("NO_KEL") int NO_KEL);
+    @FormUrlEncoded
+    @POST("pencetakan_detail.php")
+    Call<respon> pencetakan_detail(@Header("Authorization") String Authorization,
+                                 @Field("NO_KEC") int NO_KEC,
+                                 @Field("NO_KEL") int NO_KEL);
+    @FormUrlEncoded
+    @POST("perekaman_detail.php")
+    Call<respon> perekaman_detail(@Header("Authorization") String Authorization,
+                                   @Field("NO_KEC") int NO_KEC,
+                                   @Field("NO_KEL") int NO_KEL);
+    @FormUrlEncoded
+    @POST("perpindahan_detail.php")
+    Call<respon> perpindahan_detail(@Header("Authorization") String Authorization,
+                                 @Field("NO_KEC") int NO_KEC,
+                                 @Field("NO_KEL") int NO_KEL);
+    @FormUrlEncoded
+    @POST("perkawinan_detail.php")
+    Call<respon> perkawinan_detail(@Header("Authorization") String Authorization,
+                                   @Field("NO_KEC") int NO_KEC,
+                                   @Field("NO_KEL") int NO_KEL);
+    @FormUrlEncoded
+    @POST("perceraian_detail.php")
+    Call<respon> perceraian_detail(@Header("Authorization") String Authorization,
+                                  @Field("NO_KEC") int NO_KEC,
+                                  @Field("NO_KEL") int NO_KEL);
 }
