@@ -72,7 +72,6 @@ public class PerkawinanDesaAdapter extends RecyclerView.Adapter<RecyclerView.Vie
                     intent.putExtra("no_kel", no_kel);
                     intent.putExtra("nama_kel", nama_kel);
                     intent.putExtra("tot_kel", tot_kel);
-
                     context.startActivity(intent);
                 }
             });

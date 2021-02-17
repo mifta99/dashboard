@@ -21,7 +21,7 @@ import java.util.Calendar;
 import java.util.List;
 
 import mifta.code.dispendukproject1.R;
-import mifta.code.dispendukproject1.adapter.KelahiranDetailAdapter;
+import mifta.code.dispendukproject1.adapter.PerceraianDetailAdapter;
 import mifta.code.dispendukproject1.adapter.PerkawinanDetailAdapter;
 import mifta.code.dispendukproject1.api.API;
 import mifta.code.dispendukproject1.api.koneksi;
@@ -33,12 +33,12 @@ import retrofit2.Response;
 
 import static mifta.code.dispendukproject1.api.Colors.colors;
 
-public class PerkawinanDetailActivity extends AppCompatActivity {
+public class PerceraianDetailActivity extends AppCompatActivity {
     TextView tanggal, bulan, tahun, hari, total_kab, nama, judul;
     RecyclerView recyclerView;
     ProgressBar progressBar;
     private List<tampil> results = new ArrayList<>();
-    private PerkawinanDetailAdapter perkawinanDetailAdapter;
+    private PerceraianDetailAdapter perceraianDetailAdapter;
     private int no_kec, no_kel;
     private String nama_kel, tot_kel;
 
@@ -98,7 +98,7 @@ public class PerkawinanDetailActivity extends AppCompatActivity {
         tot_kel = intent.getStringExtra("tot_kel");
 
         total_kab.setText(tot_kel);
-        judul.setText("PERMOHONAN AKTA PERKAWINAN");
+        judul.setText("PERMOHONAN AKTA PERCERAIAN");
         nama.setText("DESA " + nama_kel);
 
         SharedPreferences sharedPreferences = getSharedPreferences("myproject", Context.MODE_PRIVATE);
@@ -120,7 +120,7 @@ public class PerkawinanDetailActivity extends AppCompatActivity {
         final String jwt_ = sharedPreferences.getString("jwt", "0");
         API api = koneksi.getClient().create(API.class);
 
-        Call<respon> aksi = api.perkawinan_detail(jwt_, no_kec, no_kel);
+        Call<respon> aksi = api.perceraian_detail(jwt_, no_kec, no_kel);
 
         aksi.enqueue(new Callback<respon>() {
             @Override
@@ -130,14 +130,14 @@ public class PerkawinanDetailActivity extends AppCompatActivity {
                 if (response.code() == 200) {
                     showLoading(false);
                     results = response.body().getResult();
-                    perkawinanDetailAdapter = new PerkawinanDetailAdapter(PerkawinanDetailActivity.this, results);
+                    perceraianDetailAdapter = new PerceraianDetailAdapter(PerceraianDetailActivity.this, results);
                     recyclerView.getRecycledViewPool().clear();
-                    perkawinanDetailAdapter.notifyDataSetChanged();
-                    recyclerView.setAdapter(perkawinanDetailAdapter);
+                    perceraianDetailAdapter.notifyDataSetChanged();
+                    recyclerView.setAdapter(perceraianDetailAdapter);
                 } else if(response.code() == 204){
-                    Toast.makeText(PerkawinanDetailActivity.this, "Data Tidak Ada", Toast.LENGTH_LONG).show();
+                    Toast.makeText(PerceraianDetailActivity.this, "Data Tidak Ada", Toast.LENGTH_LONG).show();
                 }else {
-                    Toast.makeText(PerkawinanDetailActivity.this, "Token tidak valid atau Token expired", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(PerceraianDetailActivity.this, "Token tidak valid atau Token expired", Toast.LENGTH_SHORT).show();
                     logout();
                 }
             }
@@ -154,7 +154,7 @@ public class PerkawinanDetailActivity extends AppCompatActivity {
         SharedPreferences.Editor akses = sharedPreferences.edit();
         akses.clear();
         akses.commit();
-        startActivity(new Intent(PerkawinanDetailActivity.this, LoginActivity.class));
+        startActivity(new Intent(PerceraianDetailActivity.this, LoginActivity.class));
         finish();
     }
 }

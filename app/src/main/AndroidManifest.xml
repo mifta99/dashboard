@@ -13,8 +13,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activity.PerkawinanDetailActivity"
+        <activity android:name=".activity.PerceraianDetailActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+        <activity
+            android:name=".activity.PerkawinanDetailActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".activity.PerpindahanDetailActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />

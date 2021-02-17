@@ -74,7 +74,6 @@ public class AktaPerkawinanAdapter extends RecyclerView.Adapter<RecyclerView.Vie
                 intent.putExtra("no_kec", no_kec);
                 intent.putExtra("nama_kec", nama_kec);
                 intent.putExtra("tot_kec", tot_kec);
-
                 context.startActivity(intent);
             }
         });
