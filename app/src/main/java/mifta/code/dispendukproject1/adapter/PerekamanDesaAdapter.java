@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
@@ -74,6 +75,14 @@ public class PerekamanDesaAdapter extends RecyclerView.Adapter<RecyclerView.View
                     context.startActivity(intent);
                 }
             });
+        }else {
+            myHolder.crd.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Toast.makeText(view.getContext(), "DATA TIDAK ADA!", Toast.LENGTH_SHORT).show();
+                }
+            });
+
         }
     }
 
