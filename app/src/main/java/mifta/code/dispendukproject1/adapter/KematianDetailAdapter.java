@@ -76,7 +76,7 @@ public class KematianDetailAdapter extends RecyclerView.Adapter<RecyclerView.Vie
             no_doc = itemView.findViewById(R.id.tvx_no_doc);
             ly_doc = itemView.findViewById(R.id.ly_no_doc);
             tgl_mati = itemView.findViewById(R.id.tvx_tgl_mati);
-            ly_tgl_mati=itemView.findViewById(R.id.ly_tgl_mati);
+            ly_tgl_mati = itemView.findViewById(R.id.ly_tgl_mati);
 
             ly_doc.setVisibility(View.VISIBLE);
             ly_tgl_mati.setVisibility(View.VISIBLE);

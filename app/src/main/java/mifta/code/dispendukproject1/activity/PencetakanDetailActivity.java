@@ -1,9 +1,5 @@
 package mifta.code.dispendukproject1.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -14,6 +10,10 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.github.ybq.android.spinkit.style.Circle;
 
 import java.util.ArrayList;
@@ -21,7 +21,6 @@ import java.util.Calendar;
 import java.util.List;
 
 import mifta.code.dispendukproject1.R;
-import mifta.code.dispendukproject1.adapter.BiodataDetailAdapter;
 import mifta.code.dispendukproject1.adapter.PencetakanDetailAdapter;
 import mifta.code.dispendukproject1.api.API;
 import mifta.code.dispendukproject1.api.koneksi;
@@ -134,9 +133,9 @@ public class PencetakanDetailActivity extends AppCompatActivity {
                     recyclerView.getRecycledViewPool().clear();
                     pencetakanDetailAdapter.notifyDataSetChanged();
                     recyclerView.setAdapter(pencetakanDetailAdapter);
-                } else if(response.code() == 204){
+                } else if (response.code() == 204) {
                     Toast.makeText(PencetakanDetailActivity.this, "Data Tidak Ada", Toast.LENGTH_LONG).show();
-                }else {
+                } else {
                     Toast.makeText(PencetakanDetailActivity.this, "Token tidak valid atau Token expired", Toast.LENGTH_SHORT).show();
                     logout();
                 }

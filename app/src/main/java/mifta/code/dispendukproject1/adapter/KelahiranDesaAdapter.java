@@ -18,7 +18,6 @@ import java.util.List;
 
 import mifta.code.dispendukproject1.R;
 import mifta.code.dispendukproject1.activity.KelahiranDetailActivity;
-import mifta.code.dispendukproject1.activity.KkDetailActivity;
 import mifta.code.dispendukproject1.api.tampil;
 
 public class KelahiranDesaAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
@@ -61,7 +60,7 @@ public class KelahiranDesaAdapter extends RecyclerView.Adapter<RecyclerView.View
                 .placeholder(R.drawable.ic_loading)
                 .error(R.drawable.ic_loading)
                 .into(myHolder.ic);
-        if (Integer.valueOf(result.getJUMLAH()) != 0){
+        if (Integer.valueOf(result.getJUMLAH()) != 0) {
             myHolder.crd.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -75,7 +74,7 @@ public class KelahiranDesaAdapter extends RecyclerView.Adapter<RecyclerView.View
                     context.startActivity(intent);
                 }
             });
-        }else {
+        } else {
             myHolder.crd.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

@@ -79,13 +79,13 @@ public class PerceraianDetailAdapter extends RecyclerView.Adapter<RecyclerView.V
             ly_nik = itemView.findViewById(R.id.ly_nik);
             ly_kk = itemView.findViewById(R.id.ly_no_kk);
             ly_nama = itemView.findViewById(R.id.ly_nama);
-            ly_tgl=itemView.findViewById(R.id.ly_tgl);
+            ly_tgl = itemView.findViewById(R.id.ly_tgl);
             ly_alamat = itemView.findViewById(R.id.ly_alamat);
             ly_niks = itemView.findViewById(R.id.ly_nik_suami);
             ly_nms = itemView.findViewById(R.id.ly_nama_suami);
-            ly_niki=itemView.findViewById(R.id.ly_nik_istri);
-            ly_nmi=itemView.findViewById(R.id.ly_nama_istri);
-            ly_cerai=itemView.findViewById(R.id.ly_tgl_cerai);
+            ly_niki = itemView.findViewById(R.id.ly_nik_istri);
+            ly_nmi = itemView.findViewById(R.id.ly_nama_istri);
+            ly_cerai = itemView.findViewById(R.id.ly_tgl_cerai);
 
             ly_doc.setVisibility(View.VISIBLE);
             ly_nik.setVisibility(View.GONE);

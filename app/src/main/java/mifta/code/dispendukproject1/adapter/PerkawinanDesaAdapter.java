@@ -17,7 +17,6 @@ import com.bumptech.glide.Glide;
 import java.util.List;
 
 import mifta.code.dispendukproject1.R;
-import mifta.code.dispendukproject1.activity.KelahiranDetailActivity;
 import mifta.code.dispendukproject1.activity.PerkawinanDetailActivity;
 import mifta.code.dispendukproject1.api.tampil;
 
@@ -61,7 +60,7 @@ public class PerkawinanDesaAdapter extends RecyclerView.Adapter<RecyclerView.Vie
                 .placeholder(R.drawable.ic_loading)
                 .error(R.drawable.ic_loading)
                 .into(myHolder.ic);
-        if (Integer.valueOf(result.getJUMLAH()) != 0){
+        if (Integer.valueOf(result.getJUMLAH()) != 0) {
             myHolder.crd.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -75,7 +74,7 @@ public class PerkawinanDesaAdapter extends RecyclerView.Adapter<RecyclerView.Vie
                     context.startActivity(intent);
                 }
             });
-        }else {
+        } else {
             myHolder.crd.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
