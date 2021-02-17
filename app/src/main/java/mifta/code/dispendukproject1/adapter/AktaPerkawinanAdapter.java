@@ -2,11 +2,13 @@ package mifta.code.dispendukproject1.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
@@ -61,6 +63,10 @@ public class AktaPerkawinanAdapter extends RecyclerView.Adapter<RecyclerView.Vie
         myHolder.crd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                SharedPreferences sharedPreferences = view.getContext().getSharedPreferences("myproject", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putInt("no_kec", result.getNO_KEC());
+                editor.commit();
                 Intent intent = new Intent(view.getContext(), PerkawinanDesaActivity.class);
                 Integer no_kec = Integer.valueOf(result.getNO_KEC());
                 String nama_kec = String.valueOf(result.getNAMA_KEC());
@@ -68,6 +74,7 @@ public class AktaPerkawinanAdapter extends RecyclerView.Adapter<RecyclerView.Vie
                 intent.putExtra("no_kec", no_kec);
                 intent.putExtra("nama_kec", nama_kec);
                 intent.putExtra("tot_kec", tot_kec);
+
                 context.startActivity(intent);
             }
         });
