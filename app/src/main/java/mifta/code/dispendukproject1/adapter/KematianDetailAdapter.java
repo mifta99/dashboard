@@ -53,6 +53,7 @@ public class KematianDetailAdapter extends RecyclerView.Adapter<RecyclerView.Vie
         myHolder.tgl.setText(result.getTGL_LHR());
         myHolder.alamat.setText(result.getALAMAT());
         myHolder.no_doc.setText(result.getNO_DOC());
+        myHolder.tgl_mati.setText(result.getTGL_MATI());
 
     }
 
